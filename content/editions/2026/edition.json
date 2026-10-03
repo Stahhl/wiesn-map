@@ -55,7 +55,7 @@
 			"id": "rides",
 			"label": "Attraktioner",
 			"swatch": "#d6093b",
-			"default": true,
+			"default": false,
 			"dimWhenFocused": true
 		},
 		{

@@ -181,7 +181,7 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 			"id": "rides",
 			"label": "Attraktioner",
 			"swatch": "#d6093b",
-			"default": true,
+			"default": false,
 			"dimWhenFocused": true
 		},
 		{
