@@ -1,0 +1,81 @@
+{
+	"schemaVersion": 1,
+	"id": "2026",
+	"title": "Wiesn 2026",
+	"subtitle": "Theresienwiese · 19 sep – 4 okt",
+	"dates": { "start": "2026-09-19", "end": "2026-10-04" },
+
+	"map": {
+		"file": "map.svg",
+		"dimOpacity": 0.16,
+		"maxZoom": 5,
+		"autoFit": true
+	},
+
+	"categories": [
+		{
+			"id": "large",
+			"label": "Stora tält",
+			"short": "Stora",
+			"singular": "Stort tält",
+			"color": "#c59b17",
+			"shape": "square"
+		},
+		{
+			"id": "small",
+			"label": "Små tält",
+			"short": "Små",
+			"singular": "Litet tält",
+			"color": "#009bc3",
+			"shape": "round"
+		}
+	],
+
+	"areas": [
+		{ "id": "wiesn", "label": "Wiesn" },
+		{
+			"id": "oide-wiesn",
+			"label": "Oide Wiesn",
+			"tag": { "bg": "#f6eb8d", "fg": "#5c5212" },
+			"legend": { "fill": "#f6eb8d", "stroke": "#decb34" }
+		}
+	],
+
+	"filters": {
+		"mode": "all",
+		"items": [
+			{ "id": "wine", "label": "Vin på menyn", "tag": { "bg": "#f3e3e6", "fg": "#7d1d33" } },
+			{ "id": "bar", "label": "Bar", "tag": { "bg": "#f4ead0", "fg": "#6b5208" } }
+		],
+		"fallbackTag": { "label": "Öl & mat", "bg": "#efece2", "fg": "#4a4f4b" }
+	},
+
+	"layers": [
+		{
+			"id": "rides",
+			"label": "Attraktioner",
+			"swatch": "#d6093b",
+			"default": true,
+			"dimWhenFocused": true
+		},
+		{
+			"id": "bars",
+			"label": "Ölbarer",
+			"swatch": "#8d70a1",
+			"default": true,
+			"dimWhenFocused": true
+		},
+		{ "id": "gates", "label": "In-/utgångar", "symbol": "icon-gate", "default": true },
+		{ "id": "wc", "label": "Toaletter", "symbol": "icon-wc", "default": false },
+		{ "id": "water", "label": "Dricksvatten", "symbol": "icon-water", "default": false },
+		{ "id": "atm", "label": "Bankomater", "symbol": "icon-atm", "default": false },
+		{
+			"id": "safety",
+			"label": "Första hjälpen, polis & safe space",
+			"symbol": "icon-aid",
+			"default": false
+		},
+		{ "id": "info", "label": "Information & bagage", "symbol": "icon-info", "default": false },
+		{ "id": "mgmt", "label": "Festledning", "swatch": "#ce087a", "default": true }
+	]
+}

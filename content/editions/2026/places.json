@@ -1,0 +1,392 @@
+[
+	{
+		"id": "marstall",
+		"name": "Marstall Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Spaten",
+		"seats": 4200,
+		"features": ["wine", "bar"]
+	},
+	{
+		"id": "armbrust",
+		"name": "Armbrustschützen-Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Paulaner",
+		"seats": 7400,
+		"features": []
+	},
+	{
+		"id": "hofbraeu",
+		"name": "Hofbräu-Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Hofbräu",
+		"seats": 10000,
+		"features": []
+	},
+	{
+		"id": "hacker",
+		"name": "Hacker-Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Hacker-Pschorr",
+		"seats": 9300,
+		"features": ["bar"]
+	},
+	{
+		"id": "schottenhamel",
+		"name": "Festhalle Schottenhamel",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Spaten",
+		"seats": 10000,
+		"features": ["wine"]
+	},
+	{
+		"id": "paulaner",
+		"name": "Paulaner Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Paulaner",
+		"seats": 8400,
+		"features": ["bar"]
+	},
+	{
+		"id": "schuetzen",
+		"name": "Schützen-Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Löwenbräu",
+		"seats": 5400,
+		"features": ["wine"]
+	},
+	{
+		"id": "kaefer",
+		"name": "Käfer Wiesn-Schänke",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Paulaner",
+		"seats": 3000,
+		"features": ["wine", "bar"]
+	},
+	{
+		"id": "kufflers",
+		"name": "Kufflers Weinzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Vin & Paulaner Weißbier",
+		"seats": 2500,
+		"features": ["wine", "bar"]
+	},
+	{
+		"id": "loewenbraeu",
+		"name": "Löwenbräu-Festzelt",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Löwenbräu",
+		"seats": 8500,
+		"features": []
+	},
+	{
+		"id": "pschorr",
+		"name": "Pschorr Bräurosl",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Hacker-Pschorr",
+		"seats": 8200,
+		"features": ["bar"]
+	},
+	{
+		"id": "augustiner",
+		"name": "Augustiner-Festhalle",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Augustiner",
+		"seats": 8500,
+		"features": []
+	},
+	{
+		"id": "ochsenbraterei",
+		"name": "Ochsenbraterei",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Spaten",
+		"seats": 7400,
+		"features": []
+	},
+	{
+		"id": "fischer-vroni",
+		"name": "Fischer-Vroni",
+		"category": "large",
+		"area": "wiesn",
+		"number": null,
+		"brewery": "Augustiner",
+		"seats": 3300,
+		"features": ["wine"]
+	},
+	{
+		"id": "museumszelt",
+		"name": "Museumszelt",
+		"category": "large",
+		"area": "oide-wiesn",
+		"number": null,
+		"brewery": "Augustiner",
+		"seats": 2000,
+		"features": []
+	},
+	{
+		"id": "tradition",
+		"name": "Festzelt Tradition",
+		"category": "large",
+		"area": "oide-wiesn",
+		"number": null,
+		"brewery": "Augustiner",
+		"seats": 6000,
+		"features": []
+	},
+	{
+		"id": "schuetzenlisl",
+		"name": "Schützenlisl",
+		"category": "large",
+		"area": "oide-wiesn",
+		"number": null,
+		"brewery": "Hacker-Pschorr",
+		"seats": 1400,
+		"features": ["bar"]
+	},
+	{
+		"id": "boandlkramerei",
+		"name": "Boandlkramerei",
+		"category": "large",
+		"area": "oide-wiesn",
+		"number": null,
+		"brewery": "Löwenbräu",
+		"seats": 1500,
+		"features": ["bar"]
+	},
+	{
+		"id": "s1",
+		"name": "Feisingers Kas- und Weinstubn",
+		"category": "small",
+		"area": "wiesn",
+		"number": 1,
+		"brewery": null,
+		"seats": null,
+		"features": ["wine"]
+	},
+	{
+		"id": "s2",
+		"name": "Glöckle Wirt",
+		"category": "small",
+		"area": "wiesn",
+		"number": 2,
+		"brewery": null,
+		"seats": null,
+		"features": ["wine"]
+	},
+	{
+		"id": "s3",
+		"name": "Heinz Wurst- und Hühnerbraterei",
+		"category": "small",
+		"area": "wiesn",
+		"number": 3,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s4",
+		"name": "Hühnerbraterei Poschner",
+		"category": "small",
+		"area": "wiesn",
+		"number": 4,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s5",
+		"name": "Goldener Hahn",
+		"category": "small",
+		"area": "wiesn",
+		"number": 5,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s6",
+		"name": "Hochreiters Haxenbraterei",
+		"category": "small",
+		"area": "wiesn",
+		"number": 6,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s7",
+		"name": "Schiebl’s Kaffeehaferl",
+		"category": "small",
+		"area": "wiesn",
+		"number": 7,
+		"brewery": null,
+		"seats": null,
+		"features": ["bar"]
+	},
+	{
+		"id": "s8",
+		"name": "Vinzenzmurr Metzger Stubn",
+		"category": "small",
+		"area": "wiesn",
+		"number": 8,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s9",
+		"name": "Bartls Festzelt",
+		"category": "small",
+		"area": "wiesn",
+		"number": 9,
+		"brewery": null,
+		"seats": null,
+		"features": ["wine"]
+	},
+	{
+		"id": "s10",
+		"name": "Kalbsbraterei",
+		"category": "small",
+		"area": "wiesn",
+		"number": 10,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s11",
+		"name": "Ammer Hühner- und Entenbraterei",
+		"category": "small",
+		"area": "wiesn",
+		"number": 11,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s12",
+		"name": "Bodo’s Cafézelt & Cocktailbar",
+		"category": "small",
+		"area": "wiesn",
+		"number": 12,
+		"brewery": null,
+		"seats": null,
+		"features": ["bar"]
+	},
+	{
+		"id": "s13",
+		"name": "Münchner Knödelei",
+		"category": "small",
+		"area": "oide-wiesn",
+		"number": 13,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s14",
+		"name": "Rischart’s Café Kaiserschmarrn",
+		"category": "small",
+		"area": "wiesn",
+		"number": 14,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s15",
+		"name": "Café Theres",
+		"category": "small",
+		"area": "wiesn",
+		"number": 15,
+		"brewery": null,
+		"seats": null,
+		"features": ["bar"]
+	},
+	{
+		"id": "s16",
+		"name": "Heimer Enten- und Hühnerbraterei",
+		"category": "small",
+		"area": "wiesn",
+		"number": 16,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s17",
+		"name": "Wildstuben",
+		"category": "small",
+		"area": "wiesn",
+		"number": 17,
+		"brewery": null,
+		"seats": null,
+		"features": ["wine"]
+	},
+	{
+		"id": "s18",
+		"name": "Hochreiter’s Zur Bratwurst",
+		"category": "small",
+		"area": "wiesn",
+		"number": 18,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s19",
+		"name": "Fisch-Bäda",
+		"category": "small",
+		"area": "wiesn",
+		"number": 19,
+		"brewery": null,
+		"seats": null,
+		"features": []
+	},
+	{
+		"id": "s20",
+		"name": "Wirtshaus im Schichtl",
+		"category": "small",
+		"area": "wiesn",
+		"number": 20,
+		"brewery": null,
+		"seats": null,
+		"features": ["wine"]
+	},
+	{
+		"id": "s21",
+		"name": "Wiesn Guglhupf Café-Dreh-Bar",
+		"category": "small",
+		"area": "wiesn",
+		"number": 21,
+		"brewery": null,
+		"seats": null,
+		"features": ["bar"]
+	}
+]

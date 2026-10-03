@@ -1,0 +1,60 @@
+/* Designtokens från prototypen (docs/teknisk-profil.md §2). Färger som hör till
+   datan – kategorier, lager, taggar – kommer från edition.json. */
+:root {
+	--paper: #fffef9;
+	--ground: #f1eee4;
+	--page: #e7e4da;
+	--ink: #1f2321;
+	--muted: #6b706c;
+	--subtle: #8a8f8a;
+	--sand: #efece2;
+	--sand-2: #f6f4ec;
+	--line: rgba(31, 35, 33, 0.1);
+	--ok: #248b46;
+	--frame: #161817;
+
+	--ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+	--radius-sheet: 24px;
+	--font: -apple-system, 'SF Pro Text', system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+	color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	overscroll-behavior: none;
+}
+
+body {
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font);
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+button {
+	font: inherit;
+	color: inherit;
+	touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+	}
+}
