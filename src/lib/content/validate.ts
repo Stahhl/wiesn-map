@@ -133,6 +133,9 @@ export function validateContent(files: ContentFiles): ValidationResult {
 			for (const f of p.features) {
 				if (!features.has(f)) issue(placesFile, `${p.id}: okänd feature "${f}"`);
 			}
+			if (p.allergenInfo === 'menu' && !p.links.menu) {
+				issue(placesFile, `${p.id}: allergenInfo "menu" kräver links.menu`);
+			}
 		}
 
 		// Kartkontraktet

@@ -230,12 +230,18 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 		"features": ["bar"],
 		"hours": { "weekday": "10–23", "weekend": "9–23" },
 		"links": {
-			"menu": null,
-			"website": null,
-			"instagram": null,
-			"facebook": null,
-			"booking": null
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hofbraeu-festzelt",
+			"website": "https://www.hb-festzelt.de/en.html",
+			"booking": "https://www.hb-festzelt.de/en/reservations.html",
+			"menu": "https://www.hb-festzelt.de/en/menu.html",
+			"allergens": "https://www.hb-festzelt.de/fileadmin/speisekarten-international/Allergene2026.pdf",
+			"floorplan": "https://www.hb-festzelt.de/en/hofbraeu-festzelt/seating-plan.html",
+			"instagram": "https://www.instagram.com/hofbraeufestzelt/",
+			"facebook": "https://www.facebook.com/HB.Festzelt",
+			"tiktok": null,
+			"youtube": null
 		},
+		"allergenInfo": null,
 		"image": null,
 		"description": null
 	}
@@ -245,6 +251,8 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 - `id` är stabilt mellan år när samma tält återkommer, så att delade länkar fortsätter fungera.
 - `features` refererar till `filters.items[].id`. Taggarna i detaljarket byggs av `features`, plus `area`-taggen om den har en `tag`.
 - `number` används för små tält ("Litet tält · nr 7").
+- `links`: `oktoberfest` är tältets sida på oktoberfest.de (helst den engelska). `allergens` är ett eget dokument eller avsnitt om allergener. `floorplan` är en planritning av tältet, inte en karta över var det ligger. Sociala medier tas bara med om kontot är tältets eget, inte företagets eller operatörens. Underlaget för 2026, med källor och det som behöver göras för hand, finns i `docs/research/lankar-2026.md`.
+- `allergenInfo` (`menu` | `qr` | `staff`) talar om var allergeninformationen finns när den inte har en egen länk. Den visas som en faktarad, t.ex. "Allergener: Märkta i menyn". `menu` kräver `links.menu`, och det kontrolleras av `content:check`.
 - Fält som saknas eller är `null` döljs i UI:t. Prototypens platshållare (öppettider, länkar, foto) visas alltså inte förrän det finns riktig data.
 - Startdata: prototypens 39 tält (18 stora och 21 små) flyttas från `TENTS` i `Wiesn Karta.dc.html`.
 
@@ -293,7 +301,7 @@ Valideringen finns i `src/lib/content/validate.ts` och körs på två ställen: 
 2. att varje place har minst en form i SVG:n och att varje `data-place` finns i `places.json`, där `data-decorative` undantas
 3. att varje `data-layer` i SVG:n finns i `layers`, och att varje lager används i SVG:n
 4. att varje `symbol` i `layers` och varje `<use href="#…">` refererar till en befintlig `<symbol>`
-5. att `features`, `category` och `area` i places refererar till definierade id:n
+5. att `features`, `category` och `area` i places refererar till definierade id:n, och att `allergenInfo: "menu"` har en `links.menu`
 6. att SVG:n inte innehåller något förbjudet element (tabellen ovan)
 
 Utdata är en avvikelserapport som går att läsa, t.ex. _"place `kaefer` saknar form i map.svg"_. Fel ger exit-kod 1.

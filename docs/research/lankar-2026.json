@@ -1,0 +1,796 @@
+{
+	"generated": "2026-10-03",
+	"note": "Råmaterial för places.json. Fyll i, granska och slå sedan ihop. Se lankar-2026.md.",
+	"places": {
+		"marstall": {
+			"name": "Marstall Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/marstall-festzelt",
+				"website": "https://www.marstall-oktoberfest.de/english.html",
+				"booking": "https://www.marstall-oktoberfest.de/reservation.html",
+				"menu": "https://www.marstall-oktoberfest.de/English_Menu.html",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/marstallfestzelt/",
+				"facebook": "https://www.facebook.com/marstallfestzelt/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"oktoberfest.de länkar inte till tältets egen sajt, bara till banden. Hittad via sökning.",
+				"FAQ: allergener märks i menyn och en detaljerad lista finns på begäran."
+			],
+			"review": []
+		},
+		"armbrust": {
+			"name": "Armbrustschützen-Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/tents/big-tents/armbrustschuetzenzelt",
+				"website": "https://www.armbrustschuetzenzelt.de/en/",
+				"booking": "https://www.armbrustschuetzenzelt.de/en/reservationinquiry/",
+				"menu": "https://www.armbrustschuetzenzelt.de/en/menu/",
+				"allergens": null,
+				"floorplan": "https://www.armbrustschuetzenzelt.de/festzelt/zeltplan/",
+				"instagram": null,
+				"facebook": "https://www.facebook.com/Armbrustschuetzenzelt/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menysidan visar menyn som bild och länkar en engelsk pdf (Speisekarte-2026-englisch.pdf) med allergenkoder.",
+				"Zeltplan-sidan har Tischplan 2026 som bild."
+			],
+			"review": ["Inget Instagramkonto länkat från sajten."]
+		},
+		"hofbraeu": {
+			"name": "Hofbräu-Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hofbraeu-festzelt",
+				"website": "https://www.hb-festzelt.de/en.html",
+				"booking": "https://www.hb-festzelt.de/en/reservations.html",
+				"menu": "https://www.hb-festzelt.de/en/menu.html",
+				"allergens": "https://www.hb-festzelt.de/fileadmin/speisekarten-international/Allergene2026.pdf",
+				"floorplan": "https://www.hb-festzelt.de/en/hofbraeu-festzelt/seating-plan.html",
+				"instagram": "https://www.instagram.com/hofbraeufestzelt/",
+				"facebook": "https://www.facebook.com/HB.Festzelt",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "separate",
+			"notes": [
+				"Allergenlistan har årtal i filnamnet (Allergene2026.pdf).",
+				"Planritningen på sidan heter Hallenplan2024.jpg."
+			],
+			"review": []
+		},
+		"hacker": {
+			"name": "Hacker-Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt",
+				"website": "https://hacker-festzelt.de/",
+				"booking": "https://hacker-festzelt.de/reservierung/",
+				"menu": null,
+				"allergens": null,
+				"floorplan": "https://hacker-festzelt.de/sitzplan/",
+				"instagram": "https://www.instagram.com/hackerfestzelt/",
+				"facebook": "https://www.facebook.com/hackerfestzelt",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": ["Bokningssidan länkar vidare till portalen reservierung.derhimmelderbayern.de."],
+			"review": [
+				"Startsidan på hacker-festzelt.de innehåller injicerad spamtext om nätkasinon (Neosurf, Zodiac casino). Sajten verkar hackad. Bokningssidan ser ren ut. Bedöm om vi ska länka alls.",
+				"Den engelska sajten eng.hacker-festzelt.de, som oktoberfest.de länkar till, har ogiltigt certifikat.",
+				"Ingen meny hittad på sajten.",
+				"Planritningen är hallenplan-2016 men tältet är ombyggt. Planen är sannolikt inaktuell."
+			]
+		},
+		"schottenhamel": {
+			"name": "Festhalle Schottenhamel",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/tents/big-tents/festhalle-schottenhamel",
+				"website": "https://festhalle-schottenhamel.de/",
+				"booking": "https://festhalle-schottenhamel.de/en/reservation/",
+				"menu": "https://festhalle-schottenhamel.de/en/menu-en/",
+				"allergens": null,
+				"floorplan": "https://festhalle-schottenhamel.de/wp-content/uploads/2026/09/Hallenplan_2026.jpg",
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menysidan länkar pdf på engelska, spanska och italienska. Den tyska pdf:en har allergen- och tillsatskoder.",
+				"Planritningen ligger som bild på sidan /ueber-uns/lageplan/."
+			],
+			"review": ["Inga sociala medier länkade från sajten."]
+		},
+		"paulaner": {
+			"name": "Paulaner Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/paulaner-festzelt",
+				"website": "https://www.paulanerfestzelt.de/oktoberfest-festival-tent/",
+				"booking": "https://www.paulanerfestzelt.de/oktoberfestzelt/reservierung/",
+				"menu": "https://www.paulanerfestzelt.de/oktoberfestzelt/speisekarte/",
+				"allergens": "https://www.paulanerfestzelt.de/oktoberfestzelt-wAssets/docs/zutatenliste.pdf",
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/paulanerfestzelt/",
+				"facebook": "https://www.facebook.com/paulanerfestzelt",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menysidan har allergen- och tillsatsförklaring direkt på sidan, och pdf-menyer på tyska, engelska och italienska.",
+				"Separat ingredienslista (zutatenliste.pdf). Innehållet är inte kontrollerat."
+			],
+			"review": ["Kontrollera att zutatenliste.pdf faktiskt redovisar allergener."]
+		},
+		"schuetzen": {
+			"name": "Schützen-Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzen-festzelt",
+				"website": "https://schuetzen-festzelt.de/en/",
+				"booking": "https://schuetzen-festzelt.de/en/reservations.html",
+				"menu": "https://schuetzen-festzelt.de/en/menu.html",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/schuetzenfestzelt/",
+				"facebook": "https://www.facebook.com/Schuetzenzelt/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Den tyska pdf:en (Schutzenfestzelt_Wiesnkarte_2026.pdf) har \"Allergene Nachweis\". Den engelska pdf:en innehåller 2025 i texten."
+			],
+			"review": []
+		},
+		"kaefer": {
+			"name": "Käfer Wiesn-Schänke",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/kaefer-wiesn-schaenke",
+				"website": "https://www.feinkost-kaefer.de/pages/wiesn-schaenke",
+				"booking": "https://www.feinkost-kaefer.de/pages/schaenke-reservierung",
+				"menu": "https://cdn.shopify.com/s/files/1/0774/6817/2627/files/Speise-und-Getraenkekarte-final-20-08-26.pdf?v=1787218998",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "qr",
+			"notes": [
+				"Menyn är en pdf på Shopifys CDN med versionsparameter. Den byts troligen ut nästa år.",
+				"Menyn säger att allergener och tillsatser visas via en QR-kod. Målet syns inte på webben."
+			],
+			"review": [
+				"Sociala medier på sajten tillhör Feinkost Käfer (hela företaget), inte tältet. Ta med eller inte?",
+				"Allergeninformation finns bara via QR-kod på plats."
+			]
+		},
+		"kufflers": {
+			"name": "Kufflers Weinzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/bierzelte/grosse-zelte/kufflers-weinzelt",
+				"website": "https://www.weinzelt.com/en/",
+				"booking": "https://reservierung.weinzelt.com/reservation",
+				"menu": "https://www.weinzelt.com/de/speisenkarte.php",
+				"allergens": "https://www.weinzelt.com/de/allergene-und-zusatz.php",
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/kufflers_weinzelt/",
+				"facebook": "https://www.facebook.com/KufflersWeinzelt",
+				"tiktok": null,
+				"youtube": "https://www.youtube.com/user/KufflerTV"
+			},
+			"allergenInfo": "separate",
+			"notes": [
+				"Den engelska menysidan (/en/menu.php) har bilder från 2023, så jag valde den tyska.",
+				"YouTube-kanalen tillhör Kuffler-gruppen."
+			],
+			"review": []
+		},
+		"loewenbraeu": {
+			"name": "Löwenbräu-Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/loewenbraeu-festzelt",
+				"website": "https://www.loewenbraeuzelt.de/",
+				"booking": "https://www.loewenbraeuzelt.de/reservierungen/",
+				"menu": "https://www.loewenbraeuzelt.de/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menysidan länkar en tysk pdf och en på engelska, franska och italienska. Båda har allergenkoder."
+			],
+			"review": ["Inga sociala medier länkade från sajten."]
+		},
+		"pschorr": {
+			"name": "Pschorr Bräurosl",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/pschorr-braeurosl",
+				"website": "https://www.braeurosl.de/",
+				"booking": "https://www.braeurosl.de/reservieren/zum-reservierungsportal",
+				"menu": "https://www.braeurosl.de/menu-en",
+				"allergens": null,
+				"floorplan": "https://www.braeurosl.de/wiesn-zelt/infos-zeltplan",
+				"instagram": "https://www.instagram.com/braeurosl_festzelt/",
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Den tyska menysidan och Braeurosl_Speisekarte_2026.pdf har allergen- och tillsatskoder."
+			],
+			"review": ["Inget Facebookkonto länkat från sajten."]
+		},
+		"augustiner": {
+			"name": "Augustiner-Festhalle",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/augustiner-festhalle",
+				"website": "https://www.festhalle-augustiner.com/",
+				"booking": "https://www.festhalle-augustiner.com/reservierung/",
+				"menu": "https://www.festhalle-augustiner.com/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": ["Menyn finns bara på tyska. Pdf:en har allergenförklaring (A=Eier …)."],
+			"review": ["Inga sociala medier länkade från sajten."]
+		},
+		"ochsenbraterei": {
+			"name": "Ochsenbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/ochsenbraterei",
+				"website": "https://www.ochsenbraterei.de/en/",
+				"booking": "https://www.ochsenbraterei.de/en/reservation/",
+				"menu": "https://www.ochsenbraterei.de/en/food-drink/",
+				"allergens": "https://www.ochsenbraterei.de/wp-content/uploads/2026/08/2026-allergene-ochsenbraterei.pdf",
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/ochsenbraterei/",
+				"facebook": "https://www.facebook.com/ochsenbraterei",
+				"tiktok": "https://www.tiktok.com/@ochsenbraterei",
+				"youtube": null
+			},
+			"allergenInfo": "separate",
+			"notes": ["Allergen-pdf:en har årtal i både sökväg och filnamn."],
+			"review": []
+		},
+		"fischer-vroni": {
+			"name": "Fischer-Vroni",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/fischer-vroni",
+				"website": "https://www.fischer-vroni.de/",
+				"booking": "https://www.fischer-vroni.de/en/oktoberfest/reservierung/",
+				"menu": "https://www.fischer-vroni.de/en/oktoberfest/speisen/",
+				"allergens": "https://www.fischer-vroni.de/en/allergens/",
+				"floorplan": "https://www.fischer-vroni.de/en/oktoberfest/sitzplan/",
+				"instagram": "https://www.instagram.com/fischer_vroni_festzelt/",
+				"facebook": "https://www.facebook.com/fischervroni/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "separate",
+			"notes": ["oktoberfest.de länkar till /willkommen.html. Jag valde startsidan i stället."],
+			"review": []
+		},
+		"museumszelt": {
+			"name": "Museumszelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/the-oide-wiesn",
+				"website": "https://museumszelt-oide-wiesn.de/museumszelt-oide-wiesn/",
+				"booking": null,
+				"menu": "https://museumszelt-oide-wiesn.de/wp-content/uploads/2026/09/SPEISEKARTE_OIDE_WIESN_2026_Entwurf4_10-09_2026.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [
+				"Domänen museumszelt-oide-wiesn.de är restaurangoperatörens (Krems Festzelte) sajt. Museumszelt har en undersida där.",
+				"Det finns även ett cafékort: CafeKarte_Museumszelt2026_…pdf."
+			],
+			"review": [
+				"Ingen engelsk undersida på oktoberfest.de. Valt: den engelska Oide Wiesn-sidan, som beskriver tältet. Alternativ: den tyska utställarsidan /ausstellersuche/museumszelt.",
+				"Menyns filnamn innehåller \"Entwurf4\" (utkast 4) men är den som är länkad.",
+				"Ingen bokning för Museumszelt. Bokningsportalen pekar på ett annat evenemang (Geretsrieder Waldsommer).",
+				"Sociala medier tillhör Krems Festzelte, inte tältet. Ta med eller inte?"
+			]
+		},
+		"tradition": {
+			"name": "Festzelt Tradition",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/festzelt-tradition",
+				"website": "https://www.oktoberfestzelt-tradition.de/",
+				"booking": "https://www.oktoberfestzelt-tradition.de/festzelt-tradition-reservieren.html",
+				"menu": "https://www.oktoberfestzelt-tradition.de/festzelt-tradition-speisekarte.html",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/festzelttradition/",
+				"facebook": "https://www.facebook.com/FestzeltTradition/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"oktoberfest.de länkar med http. Jag valde https.",
+				"\"Menus 2026 (english)\" är fasta menyer för bokade bord, inte à la carte."
+			],
+			"review": []
+		},
+		"schuetzenlisl": {
+			"name": "Schützenlisl",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzenlisl",
+				"website": "https://www.schuetzenlisl.de/",
+				"booking": "https://www.schuetzenlisl.de/en/reservation/",
+				"menu": "https://www.schuetzenlisl.de/en/food-and-drinks/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/schuetzenlisl_volkssaengerzelt/",
+				"facebook": "https://www.facebook.com/profile.php?id=61560747823001",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Den engelska pdf:en har allergen- och tillsatskoder men innehåller äldre årtal (2020–2025)."
+			],
+			"review": []
+		},
+		"boandlkramerei": {
+			"name": "Boandlkramerei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/tents/tents-oide-wiesn/boandlkramerei-oktoberfest-reservation-atmosphere-history",
+				"website": "https://boandlkramerei.bayern/",
+				"booking": "https://boandlkramerei.bayern/en/reservation-oktoberfest/",
+				"menu": "https://boandlkramerei.bayern/speisekarte-oktoberfest-muenchen/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/boandlkramerei_oide_wiesn/",
+				"facebook": "https://www.facebook.com/Boandlkramerei.Oktoberfest/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Den engelska menysidans adress innehåller 2025 (/en/menu-oktoberfest-2025-munich/), så jag valde den tyska sidan, som har 2026-pdf:er."
+			],
+			"review": []
+		},
+		"s1": {
+			"name": "Feisingers Kas- und Weinstubn",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/feisingers-kas-und-weinstubn",
+				"website": "https://wiesnzelt.de/",
+				"booking": "https://wiesnzelt.de/wiesn-resevierung-2026/",
+				"menu": "https://wiesnzelt.de/speisen-und-getraenke/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/feisingers_kas_und_weinstubn/",
+				"facebook": "https://www.facebook.com/Kas.und.Weinstubn",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": ["Menyn är en bild (Speisekarte-Wiesn.jpg)."],
+			"review": [
+				"Bokningslänken har årtal i adressen och felstavat \"resevierung\". Den slutar troligen fungera 2027.",
+				"Ingen allergeninformation hittad."
+			]
+		},
+		"s2": {
+			"name": "Glöckle Wirt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/gloeckle-wirt",
+				"website": "https://www.gloeckle-wirt.de/",
+				"booking": "https://www.gloeckle-wirt.de/platzreservierung-oktoberfest-gloeckle-wirt",
+				"menu": "https://www.gloeckle-wirt.de/essen-trinken-gloeckle-wirt-oktoberfest",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": "https://www.facebook.com/gloecklewirt",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [
+				"Bokningslänken på oktoberfest.de är trasig (reservierung.html&nbsp;). Jag valde sajtens egen."
+			],
+			"review": [
+				"Ingen allergeninformation hittad. Menysidan saknar text, så innehållet behöver kollas för hand."
+			]
+		},
+		"s3": {
+			"name": "Heinz Wurst- und Hühnerbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heinz-wurst-und-huehnerbraterei",
+				"website": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/",
+				"booking": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/reservation/",
+				"menu": "https://www.heinz-huehnerbraterei.de/oktoberfest/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [
+				"Den engelska menylänken omdirigerar till den tyska sidan, där menyn är en inbäddad pdf (Speisekarte-2026-…)."
+			],
+			"review": [
+				"Allergener inte kontrollerade (pdf i inbäddad visare).",
+				"Inga sociala medier länkade."
+			]
+		},
+		"s4": {
+			"name": "Hühnerbraterei Poschner",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/poschners-huehner-und-entenbraterei",
+				"website": "https://www.poschners.de/",
+				"booking": "https://reservierung.poschners.de/",
+				"menu": "https://cdn.prod.website-files.com/683ef169f9aa900f022bd3f1/6aa11e655c8da6d813a99dde_Speisekarte_Poschners_26_20.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/poschner_oktoberfest/",
+				"facebook": "https://www.facebook.com/Poschners/",
+				"tiktok": "https://www.tiktok.com/@poschners.oktoberfest",
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menyn är en pdf på Webflows CDN med hash i namnet. Den byts troligen ut nästa år."
+			],
+			"review": ["Bokningsportalen svarar 403 på automatiska anrop. Kontrollera i webbläsare."]
+		},
+		"s5": {
+			"name": "Goldener Hahn",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/goldener-hahn",
+				"website": "https://www.ables-goldener-hahn.de/",
+				"booking": "https://www.ables-goldener-hahn.de/reservierung/",
+				"menu": "https://www.ables-goldener-hahn.de/wp-content/uploads/02_GH_A4_Speisekarte_26.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/ablesgoldenerhahn/",
+				"facebook": "https://www.facebook.com/pages/Ables-Goldener-Hahn/823723004341402",
+				"tiktok": null,
+				"youtube": "https://www.youtube.com/channel/UCGSXbnguiN5DmOC5q-bIW-w"
+			},
+			"allergenInfo": "in-menu",
+			"notes": ["Ingen menysida, bara en pdf med årtal (…_26.pdf)."],
+			"review": []
+		},
+		"s6": {
+			"name": "Hochreiters Haxenbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/hochreiters-haxnbraterei",
+				"website": "https://haxnbraterei.de/",
+				"booking": "https://haxnbraterei.de/#reservierung",
+				"menu": "https://haxnbraterei.de/wp-content/uploads/2026/08/Haxnbraterei-Hochreiter_Speisekarte2026.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/haxnbraterei/",
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"haxenbraterei.com (från oktoberfest.de) omdirigerar till haxnbraterei.de.",
+				"Bokning är en sektion på startsidan."
+			],
+			"review": []
+		},
+		"s7": {
+			"name": "Schiebl’s Kaffeehaferl",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/schiebls-kaffeehaferl",
+				"website": "https://schiebls-cafebetriebe.de/",
+				"booking": null,
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": [
+				"Sajten är företagets allmänna sida med nästan inget innehåll om Wiesn: ingen meny, bokning eller sociala medier."
+			]
+		},
+		"s8": {
+			"name": "Vinzenzmurr Metzger Stubn",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/metzgerstubn",
+				"website": "https://vinzenzmurr.de/metzger-stubn/",
+				"booking": null,
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": [
+				"Sajten tillhör slakterikedjan Vinzenzmurr. Ingen Wiesn-meny hittad (/wochenkarte/ är butikernas veckomeny).",
+				"Sociala medier (Facebook, Instagram, YouTube) tillhör kedjan, inte tältet. Ta med eller inte?",
+				"Ingen bokning hittad."
+			]
+		},
+		"s9": {
+			"name": "Bartls Festzelt",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/tents/small-tents/small-tents/all-information-about-bartls-flosserstadl",
+				"website": "https://www.floesserstadl.de/",
+				"booking": "https://www.floesserstadl.de/reservierung",
+				"menu": "https://www.floesserstadl.de/speisen-getraenke",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/floesserstadl_festzelt/",
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "qr",
+			"notes": [
+				"Nytt tält 2026. Officiellt namn: \"Bartls Flösserstadl\".",
+				"Menyn (pdf) hänvisar till en allergenmeny via QR-kod."
+			],
+			"review": ["Namnet i places.json är \"Bartls Festzelt\". Byta till \"Bartls Flösserstadl\"?"]
+		},
+		"s10": {
+			"name": "Kalbsbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/kalbsbraterei",
+				"website": "https://kalbsbraterei.de/",
+				"booking": "https://kalbsbraterei.de/reservierung/",
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/kalbsbraterei/",
+				"facebook": "https://www.facebook.com/kalbsbraterei/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": ["Ingen meny på sajten, bara en text om dagens rätter."]
+		},
+		"s11": {
+			"name": "Ammer Hühner- und Entenbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/bierzelte/kleine-zelte/ammer-huehner-und-entenbraterei",
+				"website": "https://ammer-wiesn.de/",
+				"booking": "https://ammer-wiesn.de/reservierung/",
+				"menu": "https://ammer-wiesn.de/en/menu/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/ammerwiesnzelt/",
+				"facebook": "https://www.facebook.com/ammerwiesn/",
+				"tiktok": null,
+				"youtube": "https://www.youtube.com/channel/UCBR1FRC2VXrYys1aUKsnWyQ"
+			},
+			"allergenInfo": "staff",
+			"notes": ["Menyn hänvisar till personalen (\"AMMER-Engel\") för frågor om allergener."],
+			"review": []
+		},
+		"s12": {
+			"name": "Bodo’s Cafézelt & Cocktailbar",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/bodos-cafezelt",
+				"website": "https://www.bodos.de/",
+				"booking": "https://www.bodos.de/#reservierung",
+				"menu": "https://www.bodos.de/wp-content/uploads/Speisekarte_Bodos_2026.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/bodoscafezelt/",
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": ["Bokning sker individuellt via en sektion på startsidan."],
+			"review": []
+		},
+		"s13": {
+			"name": "Münchner Knödelei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/muenchner-knoedelei",
+				"website": "https://muenchner-knoedelei.de/",
+				"booking": "https://muenchner-knoedelei.de/#online-reservierung",
+				"menu": "https://muenchner-knoedelei.de/wp-content/uploads/2026/09/menu-knoedelei-oktoberfest-2026-en.pdf",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/muenchner_knoedelei/",
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": ["Engelsk pdf med allergenkoder. Tysk och italiensk pdf finns också."],
+			"review": []
+		},
+		"s14": {
+			"name": "Rischart’s Café Kaiserschmarrn",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-kaiserschmarrn",
+				"website": "https://www.rischart.de/oktoberfest/rischart-s-cafe-kaiserschmarrn/",
+				"booking": "https://kaiserschmarrn.rischart.de/reservierung",
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": [
+				"Ingen meny för tältet hittad. Menyn och sidan \"Für Allergiker\" gäller Rischarts kaféer.",
+				"Bokningsportalen kaiserschmarrn.rischart.de blockerar automatiska besök (Cloudflare, 403). Kontrollera i webbläsare.",
+				"Sociala medier tillhör Rischart (bageri och kafé), inte tältet. Ta med eller inte?"
+			]
+		},
+		"s15": {
+			"name": "Café Theres",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-theres",
+				"website": "https://cafe-theres.de/en/",
+				"booking": "https://cafe-theres.de/en/reservieren/",
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": [
+				"Startsidan nämner \"Menu\" men har ingen länk till någon meny.",
+				"Inga sociala medier länkade."
+			]
+		},
+		"s16": {
+			"name": "Heimer Enten- und Hühnerbraterei",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heimer-enten-und-huehnerbraterei",
+				"website": "https://www.heimer-entenbraterei.de/en",
+				"booking": "https://www.heimer-entenbraterei.de/en/reservierung",
+				"menu": "https://www.heimer-entenbraterei.de/en/speisekarte",
+				"allergens": "https://www.heimer-entenbraterei.de/en/speisekarte#menu-en-hinweise",
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/heimer.oktoberfest/",
+				"facebook": "https://www.facebook.com/heimer.entenbraterei",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "separate",
+			"notes": ["Allergenerna ligger i ett eget avsnitt på menysidan (länk med ankare)."],
+			"review": []
+		},
+		"s17": {
+			"name": "Wildstuben",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wildstuben",
+				"website": "https://wildstuben.de/",
+				"booking": "https://wildstuben.de/reservierung/",
+				"menu": "https://wildstuben.de/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/wildstuben/",
+				"facebook": "https://www.facebook.com/Wildstuben-101361934570835",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": "in-menu",
+			"notes": [
+				"Menysidan länkar en tysk och en engelsk pdf (Food and Beverages). Båda har allergenkoder."
+			],
+			"review": []
+		},
+		"s18": {
+			"name": "Hochreiter’s Zur Bratwurst",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/zur-bratwurst",
+				"website": "https://zur-bratwurst.de/",
+				"booking": "https://reservierung.zur-bratwurst.de/reservierung",
+				"menu": "https://zur-bratwurst.de/speisen_getraenke",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/hochreiterszurbratwurst/",
+				"facebook": "https://www.facebook.com/zurbratwurst/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": [
+				"Ingen allergeninformation hittad på menysidan.",
+				"Bokningsportalen svarar 403 på automatiska anrop. Kontrollera i webbläsare."
+			]
+		},
+		"s19": {
+			"name": "Fisch-Bäda",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/fisch-baeda",
+				"website": "https://fisch-baeda.de/",
+				"booking": "https://fisch-baeda.de/reservierung/",
+				"menu": "https://fisch-baeda.de/speisekarte/",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/fischbaedawiesnstadl/",
+				"facebook": "https://www.facebook.com/fischbaeda/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": [],
+			"review": ["Ingen allergeninformation hittad på menysidan."]
+		},
+		"s20": {
+			"name": "Wirtshaus im Schichtl",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wirtshaus-im-schichtl",
+				"website": "https://www.schichtl.de/wirtshaus/",
+				"booking": "https://www.schichtl.de/wirtshaus/#reservierung",
+				"menu": null,
+				"allergens": null,
+				"floorplan": null,
+				"instagram": null,
+				"facebook": null,
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": ["Bokningsportalen för 2026 är stängd. Bokning sker på plats."],
+			"review": ["Ingen meny och inga sociala medier hittade."]
+		},
+		"s21": {
+			"name": "Wiesn Guglhupf Café-Dreh-Bar",
+			"links": {
+				"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wiesn-guglhupf",
+				"website": "https://www.wiesn-guglhupf.de/",
+				"booking": "https://www.wiesn-guglhupf.de/reservierung",
+				"menu": "https://www.wiesn-guglhupf.de/speisekarte",
+				"allergens": null,
+				"floorplan": null,
+				"instagram": "https://www.instagram.com/wiesn_guglhupf/",
+				"facebook": "https://www.facebook.com/wiesnguglhupf/",
+				"tiktok": null,
+				"youtube": null
+			},
+			"allergenInfo": null,
+			"notes": ["Menyn visas som bilder."],
+			"review": ["Ingen allergeninformation hittad."]
+		}
+	}
+}

@@ -49,12 +49,25 @@ export function placeFacts(place: Place, edition: Edition): Fact[] {
 		{ label: sv.area, value: areaOf(place, edition).label },
 		place.brewery ? { label: sv.brewery, value: place.brewery } : null,
 		place.seats ? { label: sv.seats, value: sv.seatsValue(place.seats) } : null,
-		place.hours ? { label: sv.hours, value: sv.hoursValue(place.hours) } : null
+		place.hours ? { label: sv.hours, value: sv.hoursValue(place.hours) } : null,
+		place.allergenInfo ? { label: sv.allergens, value: sv.allergenInfo[place.allergenInfo] } : null
 	];
 	return facts.filter((f) => f !== null);
 }
 
-const LINK_ORDER: LinkKind[] = ['menu', 'website', 'instagram', 'facebook', 'booking'];
+/** Det man behöver i tältet först, sedan sociala medier och sist den officiella sidan */
+const LINK_ORDER: LinkKind[] = [
+	'menu',
+	'allergens',
+	'website',
+	'booking',
+	'floorplan',
+	'instagram',
+	'facebook',
+	'tiktok',
+	'youtube',
+	'oktoberfest'
+];
 
 export function placeLinks(place: Place): PlaceLink[] {
 	return LINK_ORDER.flatMap((kind) => {

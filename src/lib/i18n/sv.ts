@@ -43,13 +43,24 @@ export const sv = {
 	hours: 'Öppettider',
 	hoursValue: (h: { weekday: string; weekend: string }) =>
 		`Vardagar ${h.weekday} · Helg ${h.weekend}`,
+	allergens: 'Allergener',
+	allergenInfo: {
+		menu: 'Märkta i menyn',
+		qr: 'Via QR-kod i tältet',
+		staff: 'Fråga personalen'
+	},
 	linksTitle: 'Länkar',
 	links: {
-		menu: { label: 'Meny', mono: 'M' },
+		oktoberfest: { label: 'oktoberfest.de', mono: 'O' },
 		website: { label: 'Webbplats', mono: 'W' },
+		booking: { label: 'Boka bord', mono: 'B' },
+		menu: { label: 'Meny', mono: 'M' },
+		allergens: { label: 'Allergener', mono: 'A' },
+		floorplan: { label: 'Planritning', mono: 'P' },
 		instagram: { label: 'Instagram', mono: 'IG' },
 		facebook: { label: 'Facebook', mono: 'f' },
-		booking: { label: 'Boka bord', mono: 'B' }
+		tiktok: { label: 'TikTok', mono: 'TT' },
+		youtube: { label: 'YouTube', mono: 'YT' }
 	},
 
 	// Lagerark

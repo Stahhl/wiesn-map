@@ -36,7 +36,7 @@ describe('validateContent', () => {
 	it('fyller i saknade valfria fält med null', () => {
 		const place = validateContent(real).content!.editions['2026'].places[0];
 		expect(place.hours).toBeNull();
-		expect(place.links.menu).toBeNull();
+		expect(place.links.tiktok).toBeNull();
 		expect(place.image).toBeNull();
 	});
 
@@ -76,12 +76,15 @@ describe('validateContent', () => {
 			places[1].id = places[0].id;
 			places[2].features = ['wifi'];
 			places[3].area = 'okand';
+			places[4].allergenInfo = 'menu';
+			places[4].links = {};
 			return places;
 		});
 		const m = messages(files);
 		expect(m).toContain(`${PLACES}: id "marstall" förekommer flera gånger`);
 		expect(m).toContain(`${PLACES}: hofbraeu: okänd feature "wifi"`);
 		expect(m).toContain(`${PLACES}: hacker: okänt area "okand"`);
+		expect(m).toContain(`${PLACES}: schottenhamel: allergenInfo "menu" kräver links.menu`);
 		// armbrust har nu ingen post kvar i places.json, men en form i kartan
 		expect(m).toContain(
 			`${MAP}: data-place="armbrust" finns inte i places.json (markera dekor med data-decorative)`

@@ -7,7 +7,16 @@
 		"number": null,
 		"brewery": "Spaten",
 		"seats": 4200,
-		"features": ["wine", "bar"]
+		"features": ["wine", "bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/marstall-festzelt",
+			"website": "https://www.marstall-oktoberfest.de/english.html",
+			"booking": "https://www.marstall-oktoberfest.de/reservation.html",
+			"menu": "https://www.marstall-oktoberfest.de/English_Menu.html",
+			"instagram": "https://www.instagram.com/marstallfestzelt/",
+			"facebook": "https://www.facebook.com/marstallfestzelt/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "armbrust",
@@ -17,7 +26,16 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 7400,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/tents/big-tents/armbrustschuetzenzelt",
+			"website": "https://www.armbrustschuetzenzelt.de/en/",
+			"booking": "https://www.armbrustschuetzenzelt.de/en/reservationinquiry/",
+			"menu": "https://www.armbrustschuetzenzelt.de/en/menu/",
+			"floorplan": "https://www.armbrustschuetzenzelt.de/festzelt/zeltplan/",
+			"facebook": "https://www.facebook.com/Armbrustschuetzenzelt/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "hofbraeu",
@@ -27,7 +45,17 @@
 		"number": null,
 		"brewery": "Hofbräu",
 		"seats": 10000,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hofbraeu-festzelt",
+			"website": "https://www.hb-festzelt.de/en.html",
+			"booking": "https://www.hb-festzelt.de/en/reservations.html",
+			"menu": "https://www.hb-festzelt.de/en/menu.html",
+			"allergens": "https://www.hb-festzelt.de/fileadmin/speisekarten-international/Allergene2026.pdf",
+			"floorplan": "https://www.hb-festzelt.de/en/hofbraeu-festzelt/seating-plan.html",
+			"instagram": "https://www.instagram.com/hofbraeufestzelt/",
+			"facebook": "https://www.facebook.com/HB.Festzelt"
+		}
 	},
 	{
 		"id": "hacker",
@@ -37,7 +65,12 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 9300,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt",
+			"instagram": "https://www.instagram.com/hackerfestzelt/",
+			"facebook": "https://www.facebook.com/hackerfestzelt"
+		}
 	},
 	{
 		"id": "schottenhamel",
@@ -47,7 +80,15 @@
 		"number": null,
 		"brewery": "Spaten",
 		"seats": 10000,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/tents/big-tents/festhalle-schottenhamel",
+			"website": "https://festhalle-schottenhamel.de/",
+			"booking": "https://festhalle-schottenhamel.de/en/reservation/",
+			"menu": "https://festhalle-schottenhamel.de/en/menu-en/",
+			"floorplan": "https://festhalle-schottenhamel.de/wp-content/uploads/2026/09/Hallenplan_2026.jpg"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "paulaner",
@@ -57,7 +98,16 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 8400,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/paulaner-festzelt",
+			"website": "https://www.paulanerfestzelt.de/oktoberfest-festival-tent/",
+			"booking": "https://www.paulanerfestzelt.de/oktoberfestzelt/reservierung/",
+			"menu": "https://www.paulanerfestzelt.de/oktoberfestzelt/speisekarte/",
+			"instagram": "https://www.instagram.com/paulanerfestzelt/",
+			"facebook": "https://www.facebook.com/paulanerfestzelt"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "schuetzen",
@@ -67,7 +117,16 @@
 		"number": null,
 		"brewery": "Löwenbräu",
 		"seats": 5400,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzen-festzelt",
+			"website": "https://schuetzen-festzelt.de/en/",
+			"booking": "https://schuetzen-festzelt.de/en/reservations.html",
+			"menu": "https://schuetzen-festzelt.de/en/menu.html",
+			"instagram": "https://www.instagram.com/schuetzenfestzelt/",
+			"facebook": "https://www.facebook.com/Schuetzenzelt/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "kaefer",
@@ -77,7 +136,14 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 3000,
-		"features": ["wine", "bar"]
+		"features": ["wine", "bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/kaefer-wiesn-schaenke",
+			"website": "https://www.feinkost-kaefer.de/pages/wiesn-schaenke",
+			"booking": "https://www.feinkost-kaefer.de/pages/schaenke-reservierung",
+			"menu": "https://cdn.shopify.com/s/files/1/0774/6817/2627/files/Speise-und-Getraenkekarte-final-20-08-26.pdf?v=1787218998"
+		},
+		"allergenInfo": "qr"
 	},
 	{
 		"id": "kufflers",
@@ -87,7 +153,16 @@
 		"number": null,
 		"brewery": "Vin & Paulaner Weißbier",
 		"seats": 2500,
-		"features": ["wine", "bar"]
+		"features": ["wine", "bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/bierzelte/grosse-zelte/kufflers-weinzelt",
+			"website": "https://www.weinzelt.com/en/",
+			"booking": "https://reservierung.weinzelt.com/reservation",
+			"menu": "https://www.weinzelt.com/de/speisenkarte.php",
+			"allergens": "https://www.weinzelt.com/de/allergene-und-zusatz.php",
+			"instagram": "https://www.instagram.com/kufflers_weinzelt/",
+			"facebook": "https://www.facebook.com/KufflersWeinzelt"
+		}
 	},
 	{
 		"id": "loewenbraeu",
@@ -97,7 +172,14 @@
 		"number": null,
 		"brewery": "Löwenbräu",
 		"seats": 8500,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/loewenbraeu-festzelt",
+			"website": "https://www.loewenbraeuzelt.de/",
+			"booking": "https://www.loewenbraeuzelt.de/reservierungen/",
+			"menu": "https://www.loewenbraeuzelt.de/speisekarte/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "pschorr",
@@ -107,7 +189,16 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 8200,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/pschorr-braeurosl",
+			"website": "https://www.braeurosl.de/",
+			"booking": "https://www.braeurosl.de/reservieren/zum-reservierungsportal",
+			"menu": "https://www.braeurosl.de/menu-en",
+			"floorplan": "https://www.braeurosl.de/wiesn-zelt/infos-zeltplan",
+			"instagram": "https://www.instagram.com/braeurosl_festzelt/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "augustiner",
@@ -117,7 +208,14 @@
 		"number": null,
 		"brewery": "Augustiner",
 		"seats": 8500,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/augustiner-festhalle",
+			"website": "https://www.festhalle-augustiner.com/",
+			"booking": "https://www.festhalle-augustiner.com/reservierung/",
+			"menu": "https://www.festhalle-augustiner.com/speisekarte/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "ochsenbraterei",
@@ -127,7 +225,17 @@
 		"number": null,
 		"brewery": "Spaten",
 		"seats": 7400,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/ochsenbraterei",
+			"website": "https://www.ochsenbraterei.de/en/",
+			"booking": "https://www.ochsenbraterei.de/en/reservation/",
+			"menu": "https://www.ochsenbraterei.de/en/food-drink/",
+			"allergens": "https://www.ochsenbraterei.de/wp-content/uploads/2026/08/2026-allergene-ochsenbraterei.pdf",
+			"instagram": "https://www.instagram.com/ochsenbraterei/",
+			"facebook": "https://www.facebook.com/ochsenbraterei",
+			"tiktok": "https://www.tiktok.com/@ochsenbraterei"
+		}
 	},
 	{
 		"id": "fischer-vroni",
@@ -137,7 +245,17 @@
 		"number": null,
 		"brewery": "Augustiner",
 		"seats": 3300,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/fischer-vroni",
+			"website": "https://www.fischer-vroni.de/",
+			"booking": "https://www.fischer-vroni.de/en/oktoberfest/reservierung/",
+			"menu": "https://www.fischer-vroni.de/en/oktoberfest/speisen/",
+			"allergens": "https://www.fischer-vroni.de/en/allergens/",
+			"floorplan": "https://www.fischer-vroni.de/en/oktoberfest/sitzplan/",
+			"instagram": "https://www.instagram.com/fischer_vroni_festzelt/",
+			"facebook": "https://www.facebook.com/fischervroni/"
+		}
 	},
 	{
 		"id": "museumszelt",
@@ -147,7 +265,12 @@
 		"number": null,
 		"brewery": "Augustiner",
 		"seats": 2000,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/the-oide-wiesn",
+			"website": "https://museumszelt-oide-wiesn.de/museumszelt-oide-wiesn/",
+			"menu": "https://museumszelt-oide-wiesn.de/wp-content/uploads/2026/09/SPEISEKARTE_OIDE_WIESN_2026_Entwurf4_10-09_2026.pdf"
+		}
 	},
 	{
 		"id": "tradition",
@@ -157,7 +280,16 @@
 		"number": null,
 		"brewery": "Augustiner",
 		"seats": 6000,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/festzelt-tradition",
+			"website": "https://www.oktoberfestzelt-tradition.de/",
+			"booking": "https://www.oktoberfestzelt-tradition.de/festzelt-tradition-reservieren.html",
+			"menu": "https://www.oktoberfestzelt-tradition.de/festzelt-tradition-speisekarte.html",
+			"instagram": "https://www.instagram.com/festzelttradition/",
+			"facebook": "https://www.facebook.com/FestzeltTradition/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "schuetzenlisl",
@@ -167,7 +299,16 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 1400,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzenlisl",
+			"website": "https://www.schuetzenlisl.de/",
+			"booking": "https://www.schuetzenlisl.de/en/reservation/",
+			"menu": "https://www.schuetzenlisl.de/en/food-and-drinks/",
+			"instagram": "https://www.instagram.com/schuetzenlisl_volkssaengerzelt/",
+			"facebook": "https://www.facebook.com/profile.php?id=61560747823001"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "boandlkramerei",
@@ -177,7 +318,16 @@
 		"number": null,
 		"brewery": "Löwenbräu",
 		"seats": 1500,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/tents/tents-oide-wiesn/boandlkramerei-oktoberfest-reservation-atmosphere-history",
+			"website": "https://boandlkramerei.bayern/",
+			"booking": "https://boandlkramerei.bayern/en/reservation-oktoberfest/",
+			"menu": "https://boandlkramerei.bayern/speisekarte-oktoberfest-muenchen/",
+			"instagram": "https://www.instagram.com/boandlkramerei_oide_wiesn/",
+			"facebook": "https://www.facebook.com/Boandlkramerei.Oktoberfest/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s1",
@@ -187,7 +337,15 @@
 		"number": 1,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/feisingers-kas-und-weinstubn",
+			"website": "https://wiesnzelt.de/",
+			"booking": "https://wiesnzelt.de/wiesn-resevierung-2026/",
+			"menu": "https://wiesnzelt.de/speisen-und-getraenke/speisekarte/",
+			"instagram": "https://www.instagram.com/feisingers_kas_und_weinstubn/",
+			"facebook": "https://www.facebook.com/Kas.und.Weinstubn"
+		}
 	},
 	{
 		"id": "s2",
@@ -197,7 +355,14 @@
 		"number": 2,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/gloeckle-wirt",
+			"website": "https://www.gloeckle-wirt.de/",
+			"booking": "https://www.gloeckle-wirt.de/platzreservierung-oktoberfest-gloeckle-wirt",
+			"menu": "https://www.gloeckle-wirt.de/essen-trinken-gloeckle-wirt-oktoberfest",
+			"facebook": "https://www.facebook.com/gloecklewirt"
+		}
 	},
 	{
 		"id": "s3",
@@ -207,7 +372,13 @@
 		"number": 3,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heinz-wurst-und-huehnerbraterei",
+			"website": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/",
+			"booking": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/reservation/",
+			"menu": "https://www.heinz-huehnerbraterei.de/oktoberfest/speisekarte/"
+		}
 	},
 	{
 		"id": "s4",
@@ -217,7 +388,17 @@
 		"number": 4,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/poschners-huehner-und-entenbraterei",
+			"website": "https://www.poschners.de/",
+			"booking": "https://reservierung.poschners.de/",
+			"menu": "https://cdn.prod.website-files.com/683ef169f9aa900f022bd3f1/6aa11e655c8da6d813a99dde_Speisekarte_Poschners_26_20.pdf",
+			"instagram": "https://www.instagram.com/poschner_oktoberfest/",
+			"facebook": "https://www.facebook.com/Poschners/",
+			"tiktok": "https://www.tiktok.com/@poschners.oktoberfest"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s5",
@@ -227,7 +408,17 @@
 		"number": 5,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/goldener-hahn",
+			"website": "https://www.ables-goldener-hahn.de/",
+			"booking": "https://www.ables-goldener-hahn.de/reservierung/",
+			"menu": "https://www.ables-goldener-hahn.de/wp-content/uploads/02_GH_A4_Speisekarte_26.pdf",
+			"instagram": "https://www.instagram.com/ablesgoldenerhahn/",
+			"facebook": "https://www.facebook.com/pages/Ables-Goldener-Hahn/823723004341402",
+			"youtube": "https://www.youtube.com/channel/UCGSXbnguiN5DmOC5q-bIW-w"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s6",
@@ -237,7 +428,15 @@
 		"number": 6,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/hochreiters-haxnbraterei",
+			"website": "https://haxnbraterei.de/",
+			"booking": "https://haxnbraterei.de/#reservierung",
+			"menu": "https://haxnbraterei.de/wp-content/uploads/2026/08/Haxnbraterei-Hochreiter_Speisekarte2026.pdf",
+			"instagram": "https://www.instagram.com/haxnbraterei/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s7",
@@ -247,7 +446,11 @@
 		"number": 7,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/schiebls-kaffeehaferl",
+			"website": "https://schiebls-cafebetriebe.de/"
+		}
 	},
 	{
 		"id": "s8",
@@ -257,17 +460,29 @@
 		"number": 8,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/metzgerstubn",
+			"website": "https://vinzenzmurr.de/metzger-stubn/"
+		}
 	},
 	{
 		"id": "s9",
-		"name": "Bartls Festzelt",
+		"name": "Bartls Flösserstadl",
 		"category": "small",
 		"area": "wiesn",
 		"number": 9,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/tents/small-tents/small-tents/all-information-about-bartls-flosserstadl",
+			"website": "https://www.floesserstadl.de/",
+			"booking": "https://www.floesserstadl.de/reservierung",
+			"menu": "https://www.floesserstadl.de/speisen-getraenke",
+			"instagram": "https://www.instagram.com/floesserstadl_festzelt/"
+		},
+		"allergenInfo": "qr"
 	},
 	{
 		"id": "s10",
@@ -277,7 +492,14 @@
 		"number": 10,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/kalbsbraterei",
+			"website": "https://kalbsbraterei.de/",
+			"booking": "https://kalbsbraterei.de/reservierung/",
+			"instagram": "https://www.instagram.com/kalbsbraterei/",
+			"facebook": "https://www.facebook.com/kalbsbraterei/"
+		}
 	},
 	{
 		"id": "s11",
@@ -287,7 +509,17 @@
 		"number": 11,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/bierzelte/kleine-zelte/ammer-huehner-und-entenbraterei",
+			"website": "https://ammer-wiesn.de/",
+			"booking": "https://ammer-wiesn.de/reservierung/",
+			"menu": "https://ammer-wiesn.de/en/menu/",
+			"instagram": "https://www.instagram.com/ammerwiesnzelt/",
+			"facebook": "https://www.facebook.com/ammerwiesn/",
+			"youtube": "https://www.youtube.com/channel/UCBR1FRC2VXrYys1aUKsnWyQ"
+		},
+		"allergenInfo": "staff"
 	},
 	{
 		"id": "s12",
@@ -297,7 +529,15 @@
 		"number": 12,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/bodos-cafezelt",
+			"website": "https://www.bodos.de/",
+			"booking": "https://www.bodos.de/#reservierung",
+			"menu": "https://www.bodos.de/wp-content/uploads/Speisekarte_Bodos_2026.pdf",
+			"instagram": "https://www.instagram.com/bodoscafezelt/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s13",
@@ -307,7 +547,15 @@
 		"number": 13,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/muenchner-knoedelei",
+			"website": "https://muenchner-knoedelei.de/",
+			"booking": "https://muenchner-knoedelei.de/#online-reservierung",
+			"menu": "https://muenchner-knoedelei.de/wp-content/uploads/2026/09/menu-knoedelei-oktoberfest-2026-en.pdf",
+			"instagram": "https://www.instagram.com/muenchner_knoedelei/"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s14",
@@ -317,7 +565,12 @@
 		"number": 14,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-kaiserschmarrn",
+			"website": "https://www.rischart.de/oktoberfest/rischart-s-cafe-kaiserschmarrn/",
+			"booking": "https://kaiserschmarrn.rischart.de/reservierung"
+		}
 	},
 	{
 		"id": "s15",
@@ -327,7 +580,12 @@
 		"number": 15,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-theres",
+			"website": "https://cafe-theres.de/en/",
+			"booking": "https://cafe-theres.de/en/reservieren/"
+		}
 	},
 	{
 		"id": "s16",
@@ -337,7 +595,16 @@
 		"number": 16,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heimer-enten-und-huehnerbraterei",
+			"website": "https://www.heimer-entenbraterei.de/en",
+			"booking": "https://www.heimer-entenbraterei.de/en/reservierung",
+			"menu": "https://www.heimer-entenbraterei.de/en/speisekarte",
+			"allergens": "https://www.heimer-entenbraterei.de/en/speisekarte#menu-en-hinweise",
+			"instagram": "https://www.instagram.com/heimer.oktoberfest/",
+			"facebook": "https://www.facebook.com/heimer.entenbraterei"
+		}
 	},
 	{
 		"id": "s17",
@@ -347,7 +614,16 @@
 		"number": 17,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wildstuben",
+			"website": "https://wildstuben.de/",
+			"booking": "https://wildstuben.de/reservierung/",
+			"menu": "https://wildstuben.de/speisekarte/",
+			"instagram": "https://www.instagram.com/wildstuben/",
+			"facebook": "https://www.facebook.com/Wildstuben-101361934570835"
+		},
+		"allergenInfo": "menu"
 	},
 	{
 		"id": "s18",
@@ -357,7 +633,15 @@
 		"number": 18,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/zur-bratwurst",
+			"website": "https://zur-bratwurst.de/",
+			"booking": "https://reservierung.zur-bratwurst.de/reservierung",
+			"menu": "https://zur-bratwurst.de/speisen_getraenke",
+			"instagram": "https://www.instagram.com/hochreiterszurbratwurst/",
+			"facebook": "https://www.facebook.com/zurbratwurst/"
+		}
 	},
 	{
 		"id": "s19",
@@ -367,7 +651,15 @@
 		"number": 19,
 		"brewery": null,
 		"seats": null,
-		"features": []
+		"features": [],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/fisch-baeda",
+			"website": "https://fisch-baeda.de/",
+			"booking": "https://fisch-baeda.de/reservierung/",
+			"menu": "https://fisch-baeda.de/speisekarte/",
+			"instagram": "https://www.instagram.com/fischbaedawiesnstadl/",
+			"facebook": "https://www.facebook.com/fischbaeda/"
+		}
 	},
 	{
 		"id": "s20",
@@ -377,7 +669,12 @@
 		"number": 20,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"]
+		"features": ["wine"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wirtshaus-im-schichtl",
+			"website": "https://www.schichtl.de/wirtshaus/",
+			"booking": "https://www.schichtl.de/wirtshaus/#reservierung"
+		}
 	},
 	{
 		"id": "s21",
@@ -387,6 +684,14 @@
 		"number": 21,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"]
+		"features": ["bar"],
+		"links": {
+			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wiesn-guglhupf",
+			"website": "https://www.wiesn-guglhupf.de/",
+			"booking": "https://www.wiesn-guglhupf.de/reservierung",
+			"menu": "https://www.wiesn-guglhupf.de/speisekarte",
+			"instagram": "https://www.instagram.com/wiesn_guglhupf/",
+			"facebook": "https://www.facebook.com/wiesnguglhupf/"
+		}
 	}
 ]

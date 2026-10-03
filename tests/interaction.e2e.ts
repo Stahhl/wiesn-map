@@ -68,6 +68,22 @@ test('en delad länk öppnar stället direkt', async ({ page }) => {
 	await expect(sheet).not.toBeInViewport();
 });
 
+test('detaljarket visar länkar och var allergenerna finns', async ({ page }) => {
+	await open(page, '/?plats=s13');
+	const sheet = page.getByRole('dialog', { name: 'Münchner Knödelei' });
+	await expect(sheet.getByRole('link', { name: 'Meny', exact: true })).toHaveAttribute(
+		'href',
+		/\.pdf$/
+	);
+
+	await sheet.getByText('Visa mer', { exact: true }).click();
+	await expect(sheet.locator('dt:text-is("Allergener") + dd')).toHaveText('Märkta i menyn');
+	await expect(sheet.getByRole('link', { name: /^oktoberfest\.de/ })).toHaveAttribute(
+		'href',
+		/^https:\/\/www\.oktoberfest\.de\/en\//
+	);
+});
+
 test('en okänd plats i länken ignoreras', async ({ page }) => {
 	await open(page, '/?plats=finns-inte');
 	await expect(page).toHaveURL('/');

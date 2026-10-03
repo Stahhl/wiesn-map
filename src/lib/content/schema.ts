@@ -113,14 +113,27 @@ export const PlaceSchema = v.strictObject({
 	hours: nullish(v.strictObject({ weekday: Text, weekend: Text })),
 	links: v.optional(
 		v.strictObject({
-			menu: nullish(Url),
+			/** Ställets sida på oktoberfest.de, helst den engelska */
+			oktoberfest: nullish(Url),
 			website: nullish(Url),
+			booking: nullish(Url),
+			menu: nullish(Url),
+			/** Ett eget dokument eller avsnitt om allergener */
+			allergens: nullish(Url),
+			/** Planritning av tältet, inte karta över var det ligger */
+			floorplan: nullish(Url),
 			instagram: nullish(Url),
 			facebook: nullish(Url),
-			booking: nullish(Url)
+			tiktok: nullish(Url),
+			youtube: nullish(Url)
 		}),
 		{}
 	),
+	/**
+	 * Var allergeninformationen finns när den inte har en egen länk: märkt i menyn,
+	 * via QR-kod i tältet eller hos personalen.
+	 */
+	allergenInfo: nullish(v.picklist(['menu', 'qr', 'staff'])),
 	image: nullish(Text),
 	description: nullish(Text)
 });

@@ -100,20 +100,26 @@ describe('place', () => {
 			{ label: 'Platser', value: 'ca 10 000' }
 		]);
 		expect(placeFacts(byId('s3'), edition)).toEqual([{ label: 'Område', value: 'Wiesn' }]);
-		expect(placeLinks(byId('hofbraeu'))).toEqual([]);
+		// Hacker har bara oktoberfest.de och sociala medier. Den officiella sidan kommer sist.
+		const links = placeLinks(byId('hacker'));
+		expect(links.map((l) => l.kind)).toEqual(['instagram', 'facebook', 'oktoberfest']);
+		expect(links[0]).toEqual({
+			kind: 'instagram',
+			href: 'https://www.instagram.com/hackerfestzelt/',
+			label: 'Instagram',
+			mono: 'IG',
+			sub: 'instagram.com/hackerfestzelt'
+		});
+	});
 
-		const withLinks = {
-			...byId('hofbraeu'),
-			links: { ...byId('hofbraeu').links, instagram: 'https://www.instagram.com/hb_festzelt/' }
-		};
-		expect(placeLinks(withLinks)).toEqual([
-			{
-				kind: 'instagram',
-				href: 'https://www.instagram.com/hb_festzelt/',
-				label: 'Instagram',
-				mono: 'IG',
-				sub: 'instagram.com/hb_festzelt'
-			}
-		]);
+	it('visar var allergenerna finns när de saknar egen länk', () => {
+		expect(placeFacts(byId('marstall'), edition).at(-1)).toEqual({
+			label: 'Allergener',
+			value: 'Märkta i menyn'
+		});
+		expect(placeFacts(byId('s11'), edition).at(-1)).toEqual({
+			label: 'Allergener',
+			value: 'Fråga personalen'
+		});
 	});
 });
