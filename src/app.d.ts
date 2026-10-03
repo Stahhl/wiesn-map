@@ -5,7 +5,15 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		/** Shallow routing, se src/lib/state/history.ts */
+		interface PageState {
+			/** Valt ställe */
+			place?: string;
+			/** Posten skapades när stället valdes, så bakåt stänger arket */
+			ownEntry?: true;
+			/** Lagerarket är öppet */
+			layers?: true;
+		}
 		// interface Platform {}
 	}
 }

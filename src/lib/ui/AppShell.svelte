@@ -7,6 +7,13 @@
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
+
+	// Safari zoomar annars hela sidan vid nyp utanför kartan (§7.1)
+	$effect(() => {
+		const stop = (e: Event) => e.preventDefault();
+		document.addEventListener('gesturestart', stop);
+		return () => document.removeEventListener('gesturestart', stop);
+	});
 </script>
 
 <div class="stage">

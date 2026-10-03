@@ -3,5 +3,7 @@
 	"compilerOptions": {
 		"strict": true
 	},
-	"include": ["src", "scripts", "tests", "vite.config.ts", "playwright.config.ts"]
+	"include": ["src", "scripts", "tests", "vite.config.ts", "playwright.config.ts"],
+	// Service workern har egna typer (WebWorker) i src/service-worker/tsconfig.json
+	"exclude": ["src/service-worker"]
 }

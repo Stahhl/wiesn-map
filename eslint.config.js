@@ -31,6 +31,10 @@ export default defineConfig(
 				extraFileExtensions: ['.svelte'],
 				parser: ts.parser
 			}
+		},
+		rules: {
+			// Ger falsklarm när en `$bindable`-prop tilldelas, t.ex. `bottom = …` i Header
+			'no-useless-assignment': 'off'
 		}
 	},
 	{

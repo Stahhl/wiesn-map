@@ -13,16 +13,18 @@ pnpm install
 pnpm dev            # http://localhost:5173
 ```
 
-| Kommando             | Gör                                                       |
-| -------------------- | --------------------------------------------------------- |
-| `pnpm content:check` | Validerar `content/` och skriver ut en avvikelserapport   |
-| `pnpm build`         | Bygger och förrenderar. Avbryts om innehållet är ogiltigt |
-| `pnpm preview`       | Kör det byggda resultatet lokalt                          |
-| `pnpm check`         | Typkontroll (svelte-check)                                |
-| `pnpm lint`          | Prettier + ESLint                                         |
-| `pnpm format`        | Formaterar alla filer                                     |
-| `pnpm test:unit`     | Vitest                                                    |
-| `pnpm test:e2e`      | Playwright (iPhone, Pixel, desktop). Bygger först         |
+| Kommando             | Gör                                                         |
+| -------------------- | ----------------------------------------------------------- |
+| `pnpm content:check` | Validerar `content/` och skriver ut en avvikelserapport     |
+| `pnpm build`         | Bygger och förrenderar. Avbryts om innehållet är ogiltigt   |
+| `pnpm preview`       | Kör det byggda resultatet lokalt                            |
+| `pnpm check`         | Typkontroll (svelte-check och service workern)              |
+| `pnpm lint`          | Prettier + ESLint                                           |
+| `pnpm format`        | Formaterar alla filer                                       |
+| `pnpm test:unit`     | Vitest                                                      |
+| `pnpm test:e2e`      | Playwright (iPhone, Pixel, desktop). Bygger först           |
+| `pnpm map:annotate`  | Sätter kartkontraktets attribut i en ny årskarta (se nedan) |
+| `pnpm icons`         | Ritar om appikonerna från `static/icons/icon.svg`           |
 
 Första gången du kör e2e-testerna: `pnpm exec playwright install chromium webkit`.
 
@@ -46,6 +48,25 @@ content/
    datan vid nästa öppning. Ingen app behöver uppdateras.
 
 Fält som saknas eller är `null` i `places.json` (öppettider, länkar, foto …) döljs i appen.
+
+### Ny årskarta
+
+Ge elementen i ritningen id enligt konventionen i
+[docs/teknisk-profil.md §5.2](docs/teknisk-profil.md) (`tent-<id>`, `small-tent-<nr>`,
+`label-<id>`, `pin-<id>` …) och kör:
+
+```sh
+pnpm map:annotate ritning.svg 2027   # skriver content/editions/2027/map.svg
+pnpm content:check
+```
+
+## Appen
+
+- Valt tält syns i adressen (`/?plats=hofbraeu`), så länken går att dela. Bakåtknappen
+  stänger arket.
+- Appen går att installera på hemskärmen och fungerar offline efter första besöket.
+- En ny deploy märks inom fem minuter. Appen laddar om tyst nästa gång den öppnas från
+  bakgrunden, eller visar en banner om ett ark är öppet.
 
 ## API
 

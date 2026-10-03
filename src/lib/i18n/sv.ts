@@ -2,5 +2,64 @@
 export const sv = {
 	appName: 'Wiesn-kartan',
 	description: 'Karta över Oktoberfest på Theresienwiese – tält, filter och service.',
-	mapLabel: 'Karta över festområdet'
+	mapLabel: 'Karta över festområdet',
+
+	// Header
+	layers: 'Lager',
+	layersBadge: (n: number) => `${n} extra lager tända`,
+	segmentsLabel: 'Visa',
+	all: 'Alla',
+	filter: 'Filter',
+	clear: 'Rensa',
+
+	// Karta
+	hintTouch: 'Nyp för att zooma · tryck på ett tält',
+	hintMouse: 'Scrolla för att zooma · klicka på ett tält',
+	north: 'Norr är uppåt',
+	zoomIn: 'Zooma in',
+	zoomOut: 'Zooma ut',
+	fitAll: 'Visa hela kartan',
+
+	// Resultat
+	results: 'Träffar',
+	/** Substantivet när alla kategorier visas: "5 tält med bar" */
+	allNoun: 'tält',
+	none: 'Inga',
+	and: ' och ',
+	or: ' eller ',
+	with: 'med',
+	tapForInfo: 'Tryck för info',
+	noResultsHint: 'Prova att byta till Alla eller ta bort ett filter.',
+
+	// Detaljark
+	close: 'Stäng',
+	showMore: 'Visa mer',
+	showLess: 'Visa mindre',
+	number: 'nr',
+	area: 'Område',
+	brewery: 'Bryggeri',
+	seats: 'Platser',
+	seatsValue: (n: number) => `ca ${n.toLocaleString('sv-SE')}`,
+	hours: 'Öppettider',
+	hoursValue: (h: { weekday: string; weekend: string }) =>
+		`Vardagar ${h.weekday} · Helg ${h.weekend}`,
+	linksTitle: 'Länkar',
+	links: {
+		menu: { label: 'Meny', mono: 'M' },
+		website: { label: 'Webbplats', mono: 'W' },
+		instagram: { label: 'Instagram', mono: 'IG' },
+		facebook: { label: 'Facebook', mono: 'f' },
+		booking: { label: 'Boka bord', mono: 'B' }
+	},
+
+	// Lagerark
+	layersTitle: 'Kartlager',
+	layersSubtitle: 'Teckenförklaring och vad som visas',
+	legendTitle: 'Tält',
+	showOnMap: 'Visa på kartan',
+	done: 'Klar',
+
+	// Uppdatering (§8)
+	updateAvailable: 'Ny information finns',
+	update: 'Uppdatera'
 } as const;

@@ -192,8 +192,8 @@ export function validateContent(files: ContentFiles): ValidationResult {
 				issue(mapFile, `<use href="#${ref}"> pekar på en symbol som saknas`);
 		}
 
-		if (issues.length === before) {
-			editions[dirId] = { edition, places, map: optimizeMap(svg) };
+		if (issues.length === before && map.viewBox) {
+			editions[dirId] = { edition, places, map: optimizeMap(svg), viewBox: map.viewBox };
 		}
 	}
 

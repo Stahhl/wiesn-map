@@ -141,4 +141,6 @@ export type EditionBundle = {
 	places: Place[];
 	/** Optimerad SVG-markup, redo att bäddas in */
 	map: string;
+	/** Kartans viewBox: x, y, bredd, höjd */
+	viewBox: [number, number, number, number];
 };

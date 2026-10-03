@@ -54,8 +54,8 @@ Prototypen är en interaktiv karta över Theresienwiese. Den innehåller:
 | Hosting                 | Vercel via `@sveltejs/adapter-vercel`. Allt förrenderas. Adaptern lägger bara till en fallback-funktion som svarar på okända adresser (404)                            |
 | Styling                 | Scoped Svelte-CSS + CSS custom properties. Tokens hämtas från prototypen (se nedan). Ingen Tailwind behövs för det här antalet komponenter                             |
 | Schema/validering       | Valibot, som är litet i bundlen. Schemat ger också TS-typerna                                                                                                          |
-| Karta                   | Inline-SVG i DOM + egen pan/zoom med Pointer Events, flyttad från prototypen som Svelte-action                                                                         |
-| PWA/offline             | SvelteKits inbyggda `src/service-worker.ts` + `static/manifest.webmanifest`                                                                                            |
+| Karta                   | Inline-SVG i DOM + egen pan/zoom med Pointer Events, flyttad från prototypen                                                                                           |
+| PWA/offline             | SvelteKits inbyggda service worker (`src/service-worker/`) + `static/manifest.webmanifest`                                                                             |
 | SVG-hantering vid build | SVGO med försiktig konfig: `id`, klasser, `<style>` och kontraktets `data-*` behålls. Metadata och ritverktygets attribut (`data-source-*`, `data-display-*`) tas bort |
 | Test                    | Vitest (ren logik), Playwright (e2e: iPhone-, Pixel- och desktop-profil), `svelte-check`                                                                               |
 | Kodstil                 | ESLint + Prettier (`prettier-plugin-svelte`)                                                                                                                           |
@@ -301,9 +301,14 @@ Utdata är en avvikelserapport som går att läsa, t.ex. _"place `kaefer` saknar
 ### 5.2 Arbetsflöde för en ny årskarta
 
 1. Rita eller exportera kartan som SVG (Figma, Illustrator, Inkscape, eller genererad som i år).
-2. Sätt id enligt konventionen (`tent-<id>`, `small-tent-<nr>`, `service-*`, `gate-*`). Ett hjälpskript (`scripts/annotate-map.ts`) översätter id:n till `data-place` och `data-layer`.
-3. Kör `pnpm content:check` och åtgärda avvikelserna.
-4. Öppna en PR och granska kartan i Vercel Preview.
+2. Sätt id enligt konventionen:
+   - `tent-<id>` på tältens former och `small-tent-<nr>` på numrerade små tält. Onumrerade små tält blir dekor.
+   - `label-<id>` på etiketter och `pin-<id>` på nålar.
+   - `service-*` med `data-kind` på tjänstemarkörer, där `data-kind` avgör lagret (tabellen ovan).
+   - Grupperna `attraction-footprints`, `beer-bar-footprints`, `entry-exit-markers` och `festival-management` blir lagren `rides`, `bars`, `gates` och `mgmt`.
+3. Kör `pnpm map:annotate <ritning.svg>`. Skriptet (`scripts/annotate-map.ts`) sätter kontraktets data-attribut, skriver `content/editions/<år>/map.svg` och listar det som saknas, t.ex. ställen utan etikett. viewBox och `<style>` ses över för hand.
+4. Kör `pnpm content:check` och åtgärda avvikelserna.
+5. Öppna en PR och granska kartan i Vercel Preview.
 
 Originalet `docs/wiesn_2026_north_up.svg` sparas som källa. Den annoterade versionen ligger i `content/editions/2026/map.svg`.
 
@@ -315,15 +320,17 @@ Originalet `docs/wiesn_2026_north_up.svg` sparas som källa. Den annoterade vers
 
 `src/lib/state/app.svelte.ts` innehåller en klass med runes:
 
-| State        | Typ                       | Prototyp      |
-| ------------ | ------------------------- | ------------- |
-| `category`   | `'all' \| Category['id']` | `size`        |
-| `features`   | `Set<string>`             | `wine`, `bar` |
-| `selected`   | `string \| null`          | `selected`    |
-| `expanded`   | `boolean`                 | `expanded`    |
-| `layersOpen` | `boolean`                 | `layersOpen`  |
-| `layers`     | `Record<string, boolean>` | `layers`      |
-| `hint`       | `boolean`                 | `hint`        |
+| State        | Typ                              | Prototyp      |
+| ------------ | -------------------------------- | ------------- |
+| `category`   | `string \| null` (`null` = alla) | `size`        |
+| `features`   | `SvelteSet<string>`              | `wine`, `bar` |
+| `selected`   | `string \| null`                 | `selected`    |
+| `expanded`   | `boolean`                        | `expanded`    |
+| `layersOpen` | `boolean`                        | `layersOpen`  |
+| `layers`     | `Record<string, boolean>`        | `layers`      |
+| `hint`       | `boolean`                        | `hint`        |
+
+`selected` och `layersOpen` speglar historiken (§6.2). De ändras bara via `src/lib/state/history.ts`, så att bakåtknappen alltid stämmer med det som visas.
 
 Härledda värden (`$derived`):
 
@@ -333,47 +340,50 @@ Härledda värden (`$derived`):
 - resultattiteln ("5 tält med vin på menyn och bar")
 - data till detaljarket
 
-Logiken motsvarar prototypens `sizeOk()`, `passes()`, `matchIds()` och `renderVals()`, men som rena funktioner i `src/lib/state/filter.ts` så att den kan testas med Vitest.
+Logiken motsvarar prototypens `sizeOk()`, `passes()`, `matchIds()` och `renderVals()`, men som rena funktioner så att den kan testas med Vitest: `src/lib/state/filter.ts` (filter, antal, ordning, titel) och `src/lib/state/place.ts` (typ, taggar, fakta och länkar för ett ställe).
 
 ### 6.2 URL och navigation
 
-- Valt ställe speglas i URL:en med SvelteKits shallow routing (`pushState` → `?plats=hofbraeu`).
-- Bakåtknappen på Android och i webbläsaren stänger arket, precis som i en native-app.
-- Länkar till enskilda tält går att dela och öppnar kartan fokuserad på tältet.
+- Valt ställe speglas i URL:en med SvelteKits shallow routing: `goto('?plats=hofbraeu', { shallow: true, state })`. I SvelteKit 3 ersätter det `pushState`.
+- Att välja ett ställe skapar en historikpost. Byte mellan ställen ersätter posten, så ett steg bakåt stänger alltid arket, precis som i en native-app. Lagerarket får också en egen post.
+- Länkar till enskilda tält går att dela och öppnar kartan fokuserad på tältet. Posten ersätts då, så att Stäng inte lämnar sidan. Ett okänt id i länken ignoreras.
 
 ### 6.3 Karta
 
-- `MapView.svelte` renderar den inline-SVG som bäddats in vid build och kopplar på `use:panzoom`.
-- `src/lib/map/transform.ts` innehåller rena funktioner flyttade från prototypen: `clamp`, `fitAll`, `fitTo`, `focusPlace`, `zoomAround`, med insets för header och ark (`topInset`, `SHEET_PEEK`, `RESULTS_H`). De testas med Vitest.
-- `src/lib/map/panzoom.ts` (Svelte-action) hanterar Pointer Events:
+- `MapView.svelte` renderar den inline-SVG som bäddats in vid build. Innan JavaScript har laddats placerar CSS kartan ungefär där "visa hela kartan" lägger den, så den förrenderade kartan syns direkt.
+- `src/lib/map/transform.ts` innehåller rena funktioner flyttade från prototypen: `clamp`, `fitAll`, `fitBox`, `focusBox`, `zoomAround`, `pinch` och `pan`. De testas med Vitest. Den fria ytan beskrivs av två insets: `top` mäts från headerns underkant, och `bottom` är detaljarkets eller resultatbandets höjd.
+- Ett valt ställe zoomas tills dess största sida är cirka 90 px, högst ×3. Prototypen hade en fast skala per kategori, men nu räcker formens storlek.
+- `src/lib/map/panzoom.ts` (klassen `PanZoom`) hanterar Pointer Events:
   - en pekare panorerar
   - två pekare nyper
   - dubbeltryck zoomar ×2
   - mushjul zoomar runt pekaren
   - ett tryck under 6 px förflyttning räknas som ett tryck på kartan
 - Ett tryck väljer formen under fingret, och annars närmsta ställe inom 22 px (prototypens `nearest()`).
-- `src/lib/map/styling.ts` är en `$effect` som sätter `opacity`, `stroke`, `r` och `pointer-events` per element utifrån state (prototypens `applyMap()`).
+- `src/lib/map/styling.ts`: `styleMap` körs i en `$effect` och sätter `opacity`, `stroke`, `r` och `pointer-events` per element utifrån state (prototypens `applyMap()`). Ursprungsvärdena sparas, så att en form återgår till exakt det kartan ritade. `prepareMap` gör den första formen per ställe till en knapp för tangentbord och skärmläsare.
 - Animationer: `transform` med `--ease`. När en ny gest börjar fryses en pågående animation på sin aktuella position.
 
 ### 6.4 Komponenter (`src/lib/ui/`)
 
-| Komponent          | Ansvar                                                                            |
-| ------------------ | --------------------------------------------------------------------------------- |
-| `AppShell`         | Mobil helskärm eller desktop-ram (§7). Containern för allt annat                  |
-| `Header`           | Titel och undertitel, lagerknapp med badge                                        |
-| `SegmentedControl` | Alla / kategorier, med antal                                                      |
-| `FilterChips`      | Filter från `edition.filters`, plus "Rensa"                                       |
-| `MapControls`      | Kompass, hint ("Nyp för att zooma · tryck på ett tält") och + / − / anpassa       |
-| `ResultsStrip`     | Horisontellt band med träffar, eller "Inga träffar" med en Rensa-knapp            |
-| `BottomSheet`      | Generiskt ark som går att dra, med snap-punkterna stängd, peek och expanderat     |
-| `PlaceSheet`       | Detaljark för tält: taggar, knappar (Meny, Webbplats, Instagram), info och länkar |
-| `LayersSheet`      | Teckenförklaring och lagertoggles, med scrim bakom                                |
+| Komponent          | Ansvar                                                                                                                                                                                               |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AppShell`         | Mobil helskärm eller desktop-ram (§7). Containern för allt annat                                                                                                                                     |
+| `Header`           | Titel och undertitel, lagerknapp med badge                                                                                                                                                           |
+| `SegmentedControl` | Alla / kategorier, med antal                                                                                                                                                                         |
+| `FilterChips`      | Filter från `edition.filters`, plus "Rensa"                                                                                                                                                          |
+| `MapControls`      | Kompass, hint ("Nyp för att zooma · tryck på ett tält") och + / − / anpassa                                                                                                                          |
+| `ResultsStrip`     | Horisontellt band med träffar, eller "Inga träffar" med en Rensa-knapp                                                                                                                               |
+| `BottomSheet`      | Generiskt ark som går att dra, med snap-punkterna stängd, peek och expanderat. Snappar efter position och hastighet. Bara rubrikdelen går att dra i, så innehållet kan skrolla                       |
+| `PlaceSheet`       | Detaljark för tält: taggar, knappar (Meny, Webbplats, Instagram), fakta och länkar. Peek och expandering finns bara när det finns länkar eller beskrivning. Annars blir arket så högt som innehållet |
+| `LayersSheet`      | Teckenförklaring och lagertoggles, med scrim bakom                                                                                                                                                   |
+| `UpdateNotice`     | Tyst omladdning eller banner vid ny deploy (§8)                                                                                                                                                      |
 
 ### 6.5 Tillgänglighet
 
 - Resultatbandet, arken och lagerlistan är riktiga `<button>` och listor.
 - Kartformerna får `role="button"`, `tabindex` och `aria-label` från `places`.
-- Tangentbord: `+`, `−`, `0` (anpassa), piltangenter (panorera), `Esc` (stäng ark).
+- Tangentbord: `+`, `−`, `0` (anpassa), piltangenter (panorera), `Esc` (stäng ark). `Enter` eller mellanslag på en kartform öppnar stället.
+- Tabbordningen börjar i headern och går sedan genom kartans ställen och zoomknapparna. Ett ark som öppnas får fokus, och fokus går tillbaka när det stängs.
 - `prefers-reduced-motion` stänger av transform- och arkanimationer.
 - Kontrasten följer designens tokens. Text på färgade ytor kontrolleras mot WCAG AA.
 
@@ -408,7 +418,11 @@ Allt inne i appen positioneras `absolute` relativt `AppShell`, **aldrig `positio
 
 ## 8. Offline och uppdateringar
 
-- **Offline:** service workern förcachar app-skal, förrenderad sida, data och karta vid första besöket. Appen fungerar sedan helt utan täckning, vilket är vanligt inne i tälten.
+- **Offline:** service workern (`src/service-worker/index.ts`) förcachar byggfiler, förrenderade sidor (inklusive API:t) och statiska filer vid första besöket. Appen fungerar sedan helt utan täckning, vilket är vanligt inne i tälten.
+  - Byggfiler med hash tas från cachen.
+  - Sidor och data hämtas från nätet först, så att en ny deploy syns direkt. Svarar nätet inte inom 3 s används cachen, och svaret från nätet sparas när det väl kommer.
+  - Cachen matchas med `ignoreVary`. Annars missar modulskripten, som skickas med `Origin`, svaren som förcachades utan den, och appen startar inte offline.
+  - En ny service worker tar över direkt (`skipWaiting`) och rensar gamla cachar.
 - **Ny deploy:**
   1. `kit.version.pollInterval` är satt till 5 minuter, och `updated.current` från `$app/state` blir `true` när det finns en ny version.
   2. Om inget ark är öppet laddar appen om tyst vid nästa `visibilitychange` eller navigering.
@@ -438,12 +452,15 @@ Allt inne i appen positioneras `absolute` relativt `AppShell`, **aldrig `positio
 
 **Playwright** (iPhone 15, Pixel 7, Desktop Chrome):
 
-- ett tryck på ett tält öppnar arket och fokuserar kartan, och bakåtknappen stänger arket
-- ett filter visar resultatbandet och kartan auto-fittar, "Rensa" återställer
+- ett tryck på ett tält öppnar arket och fokuserar kartan, byte av ställe ersätter historikposten och bakåtknappen stänger arket
+- ett filter visar resultatbandet, räknar segmenten och kartan auto-fittar. "Rensa" återställer
+- en delad länk (`?plats=`) öppnar stället, och ett okänt id ignoreras
 - lagertoggle visar och döljer markörer, och badgen räknas rätt
-- nyp (touch-emulering) och mushjul (desktop) zoomar inom gränserna
+- zoomknappar, mushjul och tangentbord (desktop) zoomar inom gränserna
 - layout: ramen syns på desktop, helskärm utan horisontell skroll på mobil
-- offline: andra laddningen fungerar med nätet avstängt
+- offline: andra laddningen fungerar med nätet avstängt (desktop, eftersom service workers bara stöds i Chromium i Playwright)
+
+Nyp testas inte automatiskt, eftersom Playwright inte kan emulera flera fingrar. Det testas för hand på telefon.
 
 ### 9.3 CI
 
@@ -464,15 +481,16 @@ wiesn-map/
 ├─ scripts/
 │  ├─ check-content.ts               pnpm content:check (§5.1)
 │  ├─ content-files.ts               läser content/ från disk (skript och tester)
-│  └─ annotate-map.ts                id-konvention → data-attribut (§5.2, byggs inför nästa årskarta)
+│  ├─ annotate-map.ts                pnpm map:annotate, id-konvention → data-attribut (§5.2)
+│  └─ icons.ts                       pnpm icons, ritar PNG-ikonerna från static/icons/icon.svg
 ├─ src/
 │  ├─ app.html
-│  ├─ service-worker.ts
+│  ├─ service-worker/                index.ts + tsconfig.json (egna typer för WebWorker)
 │  ├─ lib/
-│  │  ├─ content/                    schema.ts (Valibot + typer), validate.ts (§5.1), svg.ts (parse + SVGO)
+│  │  ├─ content/                    schema.ts (Valibot + typer), validate.ts (§5.1), svg.ts (parse + SVGO), annotate.ts (§5.2)
 │  │  ├─ server/content.ts           enda platsen som vet att innehållet är filer i git
-│  │  ├─ map/                        transform.ts, panzoom.ts, styling.ts, MapView.svelte
-│  │  ├─ state/                      app.svelte.ts, filter.ts
+│  │  ├─ map/                        transform.ts, panzoom.ts, styling.ts, MapView.svelte, MapControls.svelte
+│  │  ├─ state/                      app.svelte.ts, filter.ts, place.ts, history.ts
 │  │  ├─ ui/                         komponenterna i §6.4
 │  │  ├─ styles/tokens.css
 │  │  └─ i18n/sv.ts                  alla UI-strängar samlade
@@ -482,14 +500,14 @@ wiesn-map/
 │     └─ api/v1/
 │        ├─ current.json/+server.ts
 │        └─ editions/[id].json/+server.ts, editions/[id]/map.svg/+server.ts
-├─ static/                           manifest.webmanifest, ikoner
+├─ static/                           manifest.webmanifest, icons/
 ├─ tests/                            Playwright
 ├─ .github/workflows/ci.yml          CI (§9.3)
 ├─ vite.config.ts, tsconfig.json     SvelteKit 3 konfigureras i vite.config.ts
 └─ package.json, pnpm-lock.yaml
 ```
 
-Viktiga skript i `package.json`: `dev`, `build` (validerar innehållet), `preview`, `check`, `lint`, `format`, `test:unit`, `test:e2e`, `test`, `content:check`.
+Viktiga skript i `package.json`: `dev`, `build` (validerar innehållet), `preview`, `check`, `lint`, `format`, `test:unit`, `test:e2e`, `test`, `content:check`, `map:annotate`, `icons`.
 
 ---
 
@@ -528,20 +546,21 @@ Viktiga skript i `package.json`: `dev`, `build` (validerar innehållet), `previe
 
 ## Bilaga: från prototyp till modul
 
-| Prototyp (`Wiesn Karta.dc.html`)                                                | Modul                                       |
-| ------------------------------------------------------------------------------- | ------------------------------------------- |
-| `TENTS`, `IDS`                                                                  | `content/editions/2026/places.json`         |
-| `segDefs`, `chipDef`, `layerDefs`, taggfärger                                   | `content/editions/2026/edition.json`        |
-| `assets/wiesn-map.svg`                                                          | `content/editions/2026/map.svg`             |
-| `sizeOk`, `passes`, `matchIds`, resultat och titel i `renderVals`               | `src/lib/state/filter.ts`                   |
-| `state`                                                                         | `src/lib/state/app.svelte.ts`               |
-| `applyMap`                                                                      | `src/lib/map/styling.ts`                    |
-| `measure`, `clamp`, `setT`, `fitAll`, `fitTo`, `focusTent`, `zoomAround`, `cy0` | `src/lib/map/transform.ts`                  |
-| `onDown`, `onMove`, `onUp`, `onWheel`, `handleTap`, `nearest`                   | `src/lib/map/panzoom.ts`                    |
-| Header, segment, chips                                                          | `Header`, `SegmentedControl`, `FilterChips` |
-| Zoomknappar, kompass, hint                                                      | `MapControls`                               |
-| Resultatband                                                                    | `ResultsStrip`                              |
-| Detaljark (peek/expanderat)                                                     | `BottomSheet` + `PlaceSheet`                |
-| Lagerark + scrim                                                                | `BottomSheet` + `LayersSheet`               |
-| Telefonram (410×864, 56 px radie)                                               | `AppShell` (desktop-läge)                   |
-| `support.js` (dc-runtime)                                                       | Ersätts av SvelteKit och följer inte med    |
+| Prototyp (`Wiesn Karta.dc.html`)                                      | Modul                                       |
+| --------------------------------------------------------------------- | ------------------------------------------- |
+| `TENTS`, `IDS`                                                        | `content/editions/2026/places.json`         |
+| `segDefs`, `chipDef`, `layerDefs`, taggfärger                         | `content/editions/2026/edition.json`        |
+| `assets/wiesn-map.svg`                                                | `content/editions/2026/map.svg`             |
+| `sizeOk`, `passes`, `matchIds`, resultat och titel i `renderVals`     | `src/lib/state/filter.ts`                   |
+| `state`                                                               | `src/lib/state/app.svelte.ts`               |
+| `applyMap`                                                            | `src/lib/map/styling.ts`                    |
+| `clamp`, `fitAll`, `fitTo`, `focusTent`, `zoomAround`, `cy0`          | `src/lib/map/transform.ts`                  |
+| `setT`, `onDown`, `onMove`, `onUp`, `onWheel`                         | `src/lib/map/panzoom.ts`                    |
+| `measure`, `contentBox`, `handleTap`, `nearest`, `componentDidUpdate` | `src/lib/map/MapView.svelte`                |
+| Header, segment, chips                                                | `Header`, `SegmentedControl`, `FilterChips` |
+| Zoomknappar, kompass, hint                                            | `MapControls`                               |
+| Resultatband                                                          | `ResultsStrip`                              |
+| Detaljark (peek/expanderat)                                           | `BottomSheet` + `PlaceSheet`                |
+| Lagerark + scrim                                                      | `BottomSheet` + `LayersSheet`               |
+| Telefonram (410×864, 56 px radie)                                     | `AppShell` (desktop-läge)                   |
+| `support.js` (dc-runtime)                                             | Ersätts av SvelteKit och följer inte med    |
