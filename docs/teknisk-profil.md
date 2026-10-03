@@ -531,6 +531,8 @@ Viktiga skript i `package.json`: `dev`, `build` (validerar innehållet), `previe
 
 ## 12. Senare steg (ingår inte i v1)
 
+Mindre idéer om funktioner samlas i [framtida-funktioner.md](framtida-funktioner.md).
+
 | Område        | Väg framåt                                                                                                                                                                                                |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Admin/CMS     | Ett git-baserat CMS (t.ex. Sveltia eller Decap) som redigerar samma JSON-filer, alternativt en databas plus egen `/admin`. Båda vägarna byter bara `#lib/server/content.ts`, och klienterna påverkas inte |
