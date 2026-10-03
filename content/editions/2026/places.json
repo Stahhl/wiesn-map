@@ -26,7 +26,7 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 7400,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/tents/big-tents/armbrustschuetzenzelt",
 			"website": "https://www.armbrustschuetzenzelt.de/en/",
@@ -65,7 +65,7 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 9300,
-		"features": ["bar"],
+		"features": [],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt",
 			"instagram": "https://www.instagram.com/hackerfestzelt/",
@@ -98,7 +98,7 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 8400,
-		"features": ["bar"],
+		"features": [],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/paulaner-festzelt",
 			"website": "https://www.paulanerfestzelt.de/oktoberfest-festival-tent/",
@@ -136,7 +136,7 @@
 		"number": null,
 		"brewery": "Paulaner",
 		"seats": 3000,
-		"features": ["wine", "bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/kaefer-wiesn-schaenke",
 			"website": "https://www.feinkost-kaefer.de/pages/wiesn-schaenke",
@@ -189,7 +189,7 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 8200,
-		"features": ["bar"],
+		"features": [],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/pschorr-braeurosl",
 			"website": "https://www.braeurosl.de/",
@@ -265,7 +265,7 @@
 		"number": null,
 		"brewery": "Augustiner",
 		"seats": 2000,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/the-oide-wiesn",
 			"website": "https://museumszelt-oide-wiesn.de/museumszelt-oide-wiesn/",
@@ -299,7 +299,7 @@
 		"number": null,
 		"brewery": "Hacker-Pschorr",
 		"seats": 1400,
-		"features": ["bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzenlisl",
 			"website": "https://www.schuetzenlisl.de/",
@@ -318,7 +318,7 @@
 		"number": null,
 		"brewery": "Löwenbräu",
 		"seats": 1500,
-		"features": ["bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/tents/tents-oide-wiesn/boandlkramerei-oktoberfest-reservation-atmosphere-history",
 			"website": "https://boandlkramerei.bayern/",
@@ -355,7 +355,7 @@
 		"number": 2,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"],
+		"features": [],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/gloeckle-wirt",
 			"website": "https://www.gloeckle-wirt.de/",
@@ -372,7 +372,7 @@
 		"number": 3,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heinz-wurst-und-huehnerbraterei",
 			"website": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/",
@@ -388,7 +388,7 @@
 		"number": 4,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/poschners-huehner-und-entenbraterei",
 			"website": "https://www.poschners.de/",
@@ -408,7 +408,7 @@
 		"number": 5,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/goldener-hahn",
 			"website": "https://www.ables-goldener-hahn.de/",
@@ -428,7 +428,7 @@
 		"number": 6,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/hochreiters-haxnbraterei",
 			"website": "https://haxnbraterei.de/",
@@ -446,7 +446,7 @@
 		"number": 7,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/schiebls-kaffeehaferl",
 			"website": "https://schiebls-cafebetriebe.de/"
@@ -460,7 +460,7 @@
 		"number": 8,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/metzgerstubn",
 			"website": "https://vinzenzmurr.de/metzger-stubn/"
@@ -492,7 +492,7 @@
 		"number": 10,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/kalbsbraterei",
 			"website": "https://kalbsbraterei.de/",
@@ -509,7 +509,7 @@
 		"number": 11,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine", "bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/bierzelte/kleine-zelte/ammer-huehner-und-entenbraterei",
 			"website": "https://ammer-wiesn.de/",
@@ -529,7 +529,7 @@
 		"number": 12,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/bodos-cafezelt",
 			"website": "https://www.bodos.de/",
@@ -547,7 +547,7 @@
 		"number": 13,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine", "bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/muenchner-knoedelei",
 			"website": "https://muenchner-knoedelei.de/",
@@ -565,7 +565,7 @@
 		"number": 14,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-kaiserschmarrn",
 			"website": "https://www.rischart.de/oktoberfest/rischart-s-cafe-kaiserschmarrn/",
@@ -580,7 +580,7 @@
 		"number": 15,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-theres",
 			"website": "https://cafe-theres.de/en/",
@@ -595,7 +595,7 @@
 		"number": 16,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/heimer-enten-und-huehnerbraterei",
 			"website": "https://www.heimer-entenbraterei.de/en",
@@ -651,7 +651,7 @@
 		"number": 19,
 		"brewery": null,
 		"seats": null,
-		"features": [],
+		"features": ["wine"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/fisch-baeda",
 			"website": "https://fisch-baeda.de/",
@@ -669,7 +669,7 @@
 		"number": 20,
 		"brewery": null,
 		"seats": null,
-		"features": ["wine"],
+		"features": ["wine", "bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wirtshaus-im-schichtl",
 			"website": "https://www.schichtl.de/wirtshaus/",
@@ -684,7 +684,7 @@
 		"number": 21,
 		"brewery": null,
 		"seats": null,
-		"features": ["bar"],
+		"features": ["wine", "bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wiesn-guglhupf",
 			"website": "https://www.wiesn-guglhupf.de/",

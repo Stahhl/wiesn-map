@@ -227,7 +227,7 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 		"number": null,
 		"brewery": "Hofbräu",
 		"seats": 10000,
-		"features": ["bar"],
+		"features": [],
 		"hours": { "weekday": "10–23", "weekend": "9–23" },
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hofbraeu-festzelt",
@@ -249,7 +249,7 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 ```
 
 - `id` är stabilt mellan år när samma tält återkommer, så att delade länkar fortsätter fungera.
-- `features` refererar till `filters.items[].id`. Taggarna i detaljarket byggs av `features`, plus `area`-taggen om den har en `tag`.
+- `features` refererar till `filters.items[].id`. Taggarna i detaljarket byggs av `features`, plus `area`-taggen om den har en `tag`. Underlaget för vin och bar 2026, med vad taggarna betyder och källor per tält, finns i `docs/research/dryck-2026.md`.
 - `number` används för små tält ("Litet tält · nr 7").
 - `links`: `oktoberfest` är tältets sida på oktoberfest.de (helst den engelska). `allergens` är ett eget dokument eller avsnitt om allergener. `floorplan` är en planritning av tältet, inte en karta över var det ligger. Sociala medier tas bara med om kontot är tältets eget, inte företagets eller operatörens. De visas samlade i en egen rad med varumärkenas ikoner, inte bland de andra länkarna. Underlaget för 2026, med källor och det som behöver göras för hand, finns i `docs/research/lankar-2026.md`.
 - `allergenInfo` (`menu` | `qr` | `staff`) talar om var allergeninformationen finns när den inte har en egen länk. Den visas som en faktarad, t.ex. "Allergener: Märkta i menyn". `menu` kräver `links.menu`, och det kontrolleras av `content:check`.

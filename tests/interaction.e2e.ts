@@ -36,16 +36,17 @@ test('filter visar träffar, räknar segmenten och anpassar kartan', async ({ pa
 
 	await page.getByRole('button', { name: 'Vin på menyn', exact: true }).click();
 	const results = page.getByRole('region', { name: 'Träffar' });
-	await expect(results.getByRole('heading')).toHaveText('11 tält med vin på menyn');
-	await expect(page.getByRole('button', { name: 'Stora 6' })).toBeVisible();
-	await expect(page.getByRole('button', { name: 'Små 5' })).toBeVisible();
-	await expect.poll(() => scale(page)).toBeGreaterThan(before);
+	await expect(results.getByRole('heading')).toHaveText('28 tält med vin på menyn');
+	await expect(page.getByRole('button', { name: 'Stora 10' })).toBeVisible();
+	await expect(page.getByRole('button', { name: 'Små 18' })).toBeVisible();
 
+	// Vintälten finns över hela området, så kartan zoomar in först när urvalet krymper
 	await page.getByRole('button', { name: /^Små/ }).click();
 	await page.getByRole('button', { name: 'Bar', exact: true }).click();
-	await expect(results.getByRole('heading')).toHaveText('Inga små tält med vin på menyn och bar');
+	await expect(results.getByRole('heading')).toHaveText('4 små tält med vin på menyn och bar');
+	await expect.poll(() => scale(page)).toBeGreaterThan(before);
 
-	await results.getByRole('button', { name: 'Rensa' }).click();
+	await page.getByRole('group', { name: 'Filter' }).getByRole('button', { name: 'Rensa' }).click();
 	await expect(results).not.toBeInViewport();
 });
 

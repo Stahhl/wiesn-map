@@ -34,21 +34,33 @@ describe('filter', () => {
 
 	it('kräver alla valda filter i läget "all"', () => {
 		const c = criteria({ features: new Set(['wine', 'bar']) });
-		expect(ids(c)).toEqual(['marstall', 'kaefer', 'kufflers']);
-		expect(countBySegment(places, edition.categories, c).get('small')).toBe(0);
+		expect(ids(c)).toEqual(['marstall', 'schuetzen', 'kufflers', 's11', 's13', 's20', 's21']);
+		expect(countBySegment(places, edition.categories, c).get('small')).toBe(4);
 	});
 
 	it('räcker med ett av filtren i läget "any"', () => {
 		const c = criteria({ features: new Set(['wine', 'bar']), mode: 'any' });
-		const small = ids({ ...c, category: 'small' });
-		expect(small).toEqual(['s1', 's2', 's7', 's9', 's12', 's15', 's17', 's20', 's21']);
+		const large = ids({ ...c, category: 'large' });
+		expect(large).toEqual([
+			'marstall',
+			'armbrust',
+			'schottenhamel',
+			'schuetzen',
+			'kaefer',
+			'kufflers',
+			'fischer-vroni',
+			'museumszelt',
+			'schuetzenlisl',
+			'boandlkramerei'
+		]);
 	});
 
 	it('kombinerar kategori och filter', () => {
 		expect(ids(criteria({ category: 'small', features: new Set(['bar']) }))).toEqual([
-			's7',
-			's12',
-			's15',
+			's11',
+			's13',
+			's14',
+			's20',
 			's21'
 		]);
 	});
