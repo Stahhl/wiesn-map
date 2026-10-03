@@ -117,7 +117,7 @@
 		"number": null,
 		"brewery": "Löwenbräu",
 		"seats": 5400,
-		"features": ["wine"],
+		"features": ["wine", "bar"],
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/schuetzen-festzelt",
 			"website": "https://schuetzen-festzelt.de/en/",
