@@ -8,7 +8,17 @@ import { sv } from '#lib/i18n/sv.ts';
 export type Tag = { label: string; bg: string; fg: string };
 export type Fact = { label: string; value: string };
 export type LinkKind = keyof Place['links'];
-export type PlaceLink = { kind: LinkKind; href: string; label: string; mono: string; sub: string };
+/** Sociala medier visas samlade i en egen rad, med varumärkenas egna ikoner */
+export const SOCIAL_KINDS = ['instagram', 'facebook', 'tiktok', 'youtube'] as const;
+export type SocialKind = (typeof SOCIAL_KINDS)[number];
+export type PlaceLink = {
+	kind: Exclude<LinkKind, SocialKind>;
+	href: string;
+	label: string;
+	mono: string;
+	sub: string;
+};
+export type SocialLink = { kind: SocialKind; href: string; label: string };
 
 export function categoryOf(place: Place, edition: Edition) {
 	return edition.categories.find((c) => c.id === place.category)!;
@@ -55,17 +65,13 @@ export function placeFacts(place: Place, edition: Edition): Fact[] {
 	return facts.filter((f) => f !== null);
 }
 
-/** Det man behöver i tältet först, sedan sociala medier och sist den officiella sidan */
-const LINK_ORDER: LinkKind[] = [
+/** Det man behöver i tältet först och sist den officiella sidan */
+const LINK_ORDER: PlaceLink['kind'][] = [
 	'menu',
 	'allergens',
 	'website',
 	'booking',
 	'floorplan',
-	'instagram',
-	'facebook',
-	'tiktok',
-	'youtube',
 	'oktoberfest'
 ];
 
@@ -76,5 +82,12 @@ export function placeLinks(place: Place): PlaceLink[] {
 		const url = new URL(href);
 		const sub = (url.hostname + url.pathname).replace(/^www\./, '').replace(/\/$/, '');
 		return [{ kind, href, sub, ...sv.links[kind] }];
+	});
+}
+
+export function placeSocial(place: Place): SocialLink[] {
+	return SOCIAL_KINDS.flatMap((kind) => {
+		const href = place.links[kind];
+		return href ? [{ kind, href, label: sv.social[kind] }] : [];
 	});
 }

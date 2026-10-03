@@ -84,6 +84,23 @@ test('detaljarket visar länkar och var allergenerna finns', async ({ page }) =>
 	);
 });
 
+test('detaljarket samlar sociala medier med egna ikoner', async ({ page }) => {
+	await open(page, '/?plats=s5');
+	const sheet = page.getByRole('dialog', { name: 'Goldener Hahn' });
+	const social = sheet.getByRole('link', { name: /^(Instagram|Facebook|TikTok|YouTube)$/ });
+	// Snabbknapparna i peek-läget är bara Meny, Webbplats och Boka bord
+	await expect(sheet.locator('.quick a')).toHaveText(['Meny', 'Webbplats', 'Boka bord']);
+
+	await sheet.getByText('Visa mer', { exact: true }).click();
+	await expect(sheet.getByRole('heading', { name: 'Sociala medier' })).toBeVisible();
+	await expect(social).toHaveCount(3);
+	await expect(social.nth(0)).toHaveAccessibleName('Instagram');
+	await expect(social.nth(0)).toHaveAttribute('href', /instagram\.com\/ablesgoldenerhahn/);
+	await expect(social.nth(1)).toHaveAccessibleName('Facebook');
+	await expect(social.nth(2)).toHaveAccessibleName('YouTube');
+	await expect(social.nth(0).locator('svg path')).toHaveAttribute('fill', /^url\(#/);
+});
+
 test('en okänd plats i länken ignoreras', async ({ page }) => {
 	await open(page, '/?plats=finns-inte');
 	await expect(page).toHaveURL('/');

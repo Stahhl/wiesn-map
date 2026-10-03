@@ -2,7 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { readContentFiles } from '../../../scripts/content-files.ts';
 import { validateContent } from '#lib/content/validate.ts';
 import { countBySegment, matches, resultTitle, sortByCategory, type Criteria } from './filter.ts';
-import { kindLabel, placeFacts, placeLinks, placeTags, shortKindLabel } from './place.ts';
+import {
+	kindLabel,
+	placeFacts,
+	placeLinks,
+	placeSocial,
+	placeTags,
+	shortKindLabel
+} from './place.ts';
 
 const { edition, places } = validateContent(readContentFiles()).content!.editions['2026'];
 const byId = (id: string) => places.find((p) => p.id === id)!;
@@ -100,16 +107,35 @@ describe('place', () => {
 			{ label: 'Platser', value: 'ca 10 000' }
 		]);
 		expect(placeFacts(byId('s3'), edition)).toEqual([{ label: 'Område', value: 'Wiesn' }]);
-		// Hacker har bara oktoberfest.de och sociala medier. Den officiella sidan kommer sist.
-		const links = placeLinks(byId('hacker'));
-		expect(links.map((l) => l.kind)).toEqual(['instagram', 'facebook', 'oktoberfest']);
-		expect(links[0]).toEqual({
-			kind: 'instagram',
-			href: 'https://www.instagram.com/hackerfestzelt/',
-			label: 'Instagram',
-			mono: 'IG',
-			sub: 'instagram.com/hackerfestzelt'
-		});
+		// Hacker har bara oktoberfest.de och sociala medier
+		expect(placeLinks(byId('hacker'))).toEqual([
+			{
+				kind: 'oktoberfest',
+				href: 'https://www.oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt',
+				label: 'oktoberfest.de',
+				mono: 'O',
+				sub: 'oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt'
+			}
+		]);
+	});
+
+	it('samlar sociala medier för sig, i en fast ordning', () => {
+		expect(placeSocial(byId('hacker'))).toEqual([
+			{ kind: 'instagram', href: 'https://www.instagram.com/hackerfestzelt/', label: 'Instagram' },
+			{ kind: 'facebook', href: 'https://www.facebook.com/hackerfestzelt', label: 'Facebook' }
+		]);
+		expect(placeSocial(byId('s5')).map((l) => l.kind)).toEqual([
+			'instagram',
+			'facebook',
+			'youtube'
+		]);
+		expect(placeLinks(byId('s5')).map((l) => l.kind)).toEqual([
+			'menu',
+			'website',
+			'booking',
+			'oktoberfest'
+		]);
+		expect(placeSocial(byId('s3'))).toEqual([]);
 	});
 
 	it('visar var allergenerna finns när de saknar egen länk', () => {

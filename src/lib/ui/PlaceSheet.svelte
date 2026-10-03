@@ -1,6 +1,7 @@
 <!--
 	Detaljark för ett ställe (§6.4): typ, namn, taggar och snabblänkar i peek-läget,
-	fakta och alla länkar när arket dras upp. Det som saknas i datan visas inte.
+	fakta, alla länkar och sociala medier när arket dras upp. Det som saknas i datan
+	visas inte.
 -->
 <script lang="ts" module>
 	/** Synlig höjd i peek-läget */
@@ -10,8 +11,16 @@
 <script lang="ts">
 	import type { Edition, Place } from '#lib/content/schema.ts';
 	import { sv } from '#lib/i18n/sv.ts';
-	import { categoryOf, kindLabel, placeFacts, placeLinks, placeTags } from '#lib/state/place.ts';
+	import {
+		categoryOf,
+		kindLabel,
+		placeFacts,
+		placeLinks,
+		placeSocial,
+		placeTags
+	} from '#lib/state/place.ts';
 	import BottomSheet, { type Snap } from './BottomSheet.svelte';
+	import SocialIcon from './SocialIcon.svelte';
 
 	type Props = {
 		place: Place | null;
@@ -33,14 +42,15 @@
 	const tags = $derived(shown ? placeTags(shown, edition) : []);
 	const facts = $derived(shown ? placeFacts(shown, edition) : []);
 	const links = $derived(shown ? placeLinks(shown) : []);
+	const social = $derived(shown ? placeSocial(shown) : []);
 	/** Snabbknapparna i peek-läget */
-	const quick = $derived(links.filter((l) => ['menu', 'website', 'instagram'].includes(l.kind)));
+	const quick = $derived(links.filter((l) => ['menu', 'website', 'booking'].includes(l.kind)));
 
 	/**
 	 * Med länkar eller beskrivning har arket ett peek-läge och kan dras upp. Annars får
 	 * allt plats direkt, och arket blir bara så högt som innehållet.
 	 */
-	const hasMore = $derived(links.length > 0 || !!shown?.description);
+	const hasMore = $derived(links.length > 0 || social.length > 0 || !!shown?.description);
 	const snap: Snap = $derived(place ? (hasMore && !expanded ? 'peek' : 'expanded') : 'closed');
 
 	let height = $state(0);
@@ -141,6 +151,27 @@
 							<span class="arrow" aria-hidden="true">↗</span>
 						</a>
 					{/each}
+				</section>
+			{/if}
+
+			{#if social.length}
+				<section class="social">
+					<h3>{sv.socialTitle}</h3>
+					<ul>
+						{#each social as link (link.kind)}
+							<li>
+								<a
+									href={link.href}
+									target="_blank"
+									rel="noopener"
+									aria-label={link.label}
+									title={link.label}
+								>
+									<SocialIcon kind={link.kind} />
+								</a>
+							</li>
+						{/each}
+					</ul>
 				</section>
 			{/if}
 		{/if}
@@ -328,7 +359,8 @@
 		line-height: 1.5;
 	}
 
-	.links {
+	.links,
+	.social {
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
@@ -391,5 +423,26 @@
 
 	.arrow {
 		color: var(--subtle);
+	}
+
+	.social ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* Vit bakgrund, eftersom urtagen i Facebooks och YouTubes ikoner ska vara vita */
+	.social a {
+		width: 52px;
+		height: 52px;
+		border-radius: 14px;
+		border: 1px solid var(--line);
+		background: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

@@ -251,7 +251,7 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 - `id` är stabilt mellan år när samma tält återkommer, så att delade länkar fortsätter fungera.
 - `features` refererar till `filters.items[].id`. Taggarna i detaljarket byggs av `features`, plus `area`-taggen om den har en `tag`.
 - `number` används för små tält ("Litet tält · nr 7").
-- `links`: `oktoberfest` är tältets sida på oktoberfest.de (helst den engelska). `allergens` är ett eget dokument eller avsnitt om allergener. `floorplan` är en planritning av tältet, inte en karta över var det ligger. Sociala medier tas bara med om kontot är tältets eget, inte företagets eller operatörens. Underlaget för 2026, med källor och det som behöver göras för hand, finns i `docs/research/lankar-2026.md`.
+- `links`: `oktoberfest` är tältets sida på oktoberfest.de (helst den engelska). `allergens` är ett eget dokument eller avsnitt om allergener. `floorplan` är en planritning av tältet, inte en karta över var det ligger. Sociala medier tas bara med om kontot är tältets eget, inte företagets eller operatörens. De visas samlade i en egen rad med varumärkenas ikoner, inte bland de andra länkarna. Underlaget för 2026, med källor och det som behöver göras för hand, finns i `docs/research/lankar-2026.md`.
 - `allergenInfo` (`menu` | `qr` | `staff`) talar om var allergeninformationen finns när den inte har en egen länk. Den visas som en faktarad, t.ex. "Allergener: Märkta i menyn". `menu` kräver `links.menu`, och det kontrolleras av `content:check`.
 - Fält som saknas eller är `null` döljs i UI:t. Prototypens platshållare (öppettider, länkar, foto) visas alltså inte förrän det finns riktig data.
 - Startdata: prototypens 39 tält (18 stora och 21 små) flyttas från `TENTS` i `Wiesn Karta.dc.html`.
@@ -373,18 +373,19 @@ Logiken motsvarar prototypens `sizeOk()`, `passes()`, `matchIds()` och `renderVa
 
 ### 6.4 Komponenter (`src/lib/ui/`)
 
-| Komponent          | Ansvar                                                                                                                                                                                               |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AppShell`         | Mobil helskärm eller desktop-ram (§7). Containern för allt annat                                                                                                                                     |
-| `Header`           | Titel och undertitel, lagerknapp med badge                                                                                                                                                           |
-| `SegmentedControl` | Alla / kategorier, med antal                                                                                                                                                                         |
-| `FilterChips`      | Filter från `edition.filters`, plus "Rensa"                                                                                                                                                          |
-| `MapControls`      | Kompass, hint ("Nyp för att zooma · tryck på ett tält") och + / − / anpassa                                                                                                                          |
-| `ResultsStrip`     | Horisontellt band med träffar, eller "Inga träffar" med en Rensa-knapp                                                                                                                               |
-| `BottomSheet`      | Generiskt ark som går att dra, med snap-punkterna stängd, peek och expanderat. Snappar efter position och hastighet. Bara rubrikdelen går att dra i, så innehållet kan skrolla                       |
-| `PlaceSheet`       | Detaljark för tält: taggar, knappar (Meny, Webbplats, Instagram), fakta och länkar. Peek och expandering finns bara när det finns länkar eller beskrivning. Annars blir arket så högt som innehållet |
-| `LayersSheet`      | Teckenförklaring och lagertoggles, med scrim bakom                                                                                                                                                   |
-| `UpdateNotice`     | Tyst omladdning eller banner vid ny deploy (§8)                                                                                                                                                      |
+| Komponent          | Ansvar                                                                                                                                                                                                               |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AppShell`         | Mobil helskärm eller desktop-ram (§7). Containern för allt annat                                                                                                                                                     |
+| `Header`           | Titel och undertitel, lagerknapp med badge                                                                                                                                                                           |
+| `SegmentedControl` | Alla / kategorier, med antal                                                                                                                                                                                         |
+| `FilterChips`      | Filter från `edition.filters`, plus "Rensa"                                                                                                                                                                          |
+| `MapControls`      | Kompass, hint ("Nyp för att zooma · tryck på ett tält") och + / − / anpassa                                                                                                                                          |
+| `ResultsStrip`     | Horisontellt band med träffar, eller "Inga träffar" med en Rensa-knapp                                                                                                                                               |
+| `BottomSheet`      | Generiskt ark som går att dra, med snap-punkterna stängd, peek och expanderat. Snappar efter position och hastighet. Bara rubrikdelen går att dra i, så innehållet kan skrolla                                       |
+| `PlaceSheet`       | Detaljark för tält: taggar, knappar (Meny, Webbplats, Boka bord), fakta, länkar och sociala medier. Peek och expandering finns bara när det finns länkar eller beskrivning. Annars blir arket så högt som innehållet |
+| `SocialIcon`       | Varumärkenas egna ikoner för Instagram, Facebook, TikTok och YouTube (från Simple Icons, CC0)                                                                                                                        |
+| `LayersSheet`      | Teckenförklaring och lagertoggles, med scrim bakom                                                                                                                                                                   |
+| `UpdateNotice`     | Tyst omladdning eller banner vid ny deploy (§8)                                                                                                                                                                      |
 
 ### 6.5 Tillgänglighet
 

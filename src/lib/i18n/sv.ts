@@ -56,11 +56,14 @@ export const sv = {
 		booking: { label: 'Boka bord', mono: 'B' },
 		menu: { label: 'Meny', mono: 'M' },
 		allergens: { label: 'Allergener', mono: 'A' },
-		floorplan: { label: 'Planritning', mono: 'P' },
-		instagram: { label: 'Instagram', mono: 'IG' },
-		facebook: { label: 'Facebook', mono: 'f' },
-		tiktok: { label: 'TikTok', mono: 'TT' },
-		youtube: { label: 'YouTube', mono: 'YT' }
+		floorplan: { label: 'Planritning', mono: 'P' }
+	},
+	socialTitle: 'Sociala medier',
+	social: {
+		instagram: 'Instagram',
+		facebook: 'Facebook',
+		tiktok: 'TikTok',
+		youtube: 'YouTube'
 	},
 
 	// Lagerark
