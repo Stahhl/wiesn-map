@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '@playwright/test';
 
 /** Väntar tills kartan har fått sin första transform och tar emot tryck */
 async function open(page: Page, path = '/') {
@@ -11,6 +11,24 @@ const shape = (page: Page, id: string) =>
 
 const scale = (page: Page) =>
 	page.locator('.map').evaluate((el) => Number(/scale\(([\d.]+)\)/.exec(el.style.transform)?.[1]));
+
+/** Tältbilderna länkas från oktoberfest.de. I testerna kommer de från en lokal fil. */
+const PHOTOS = 'https://www.oktoberfest.de/sites/default/files/**';
+test.beforeEach(({ page }) =>
+	page.route(PHOTOS, (r) => r.fulfill({ path: 'static/icons/icon-512.png' }))
+);
+
+/** Hur mycket av arket som syns ovanför appens nederkant, innanför desktop-ramens kant */
+const visibleHeight = (sheet: Locator) =>
+	sheet.evaluate((el) => {
+		const app = (el as HTMLElement).offsetParent as HTMLElement;
+		const bottom = app.getBoundingClientRect().top + app.clientTop + app.clientHeight;
+		return bottom - el.getBoundingClientRect().top;
+	});
+
+/** En hög skärm, där bilden får plats i peek-läget, t.ex. appen från hemskärmen */
+const tall = (page: Page) =>
+	page.setViewportSize({ width: page.viewportSize()!.width, height: 900 });
 
 test('ett tryck på ett tält öppnar detaljarket och bakåt stänger det', async ({ page }) => {
 	await open(page);
@@ -83,6 +101,40 @@ test('detaljarket visar länkar och var allergenerna finns', async ({ page }) =>
 		'href',
 		/^https:\/\/www\.oktoberfest\.de\/en\//
 	);
+});
+
+test('detaljarket visar en bild på tältet med fotografen', async ({ page }) => {
+	await tall(page);
+	await open(page, '/?plats=s13');
+	const sheet = page.getByRole('dialog', { name: 'Münchner Knödelei' });
+	const photo = sheet.getByRole('img', { name: 'Münchner Knödelei utifrån' });
+	await expect(photo).toBeVisible();
+	await expect(photo).toHaveAttribute('src', /^https:\/\/www\.oktoberfest\.de\//);
+	await expect(sheet.getByText('Foto: RAW, Moritz Röder / oktoberfest.de')).toBeVisible();
+	// Peek-läget (300) blir högre med bilden (136) och mellanrummet under den (10)
+	await expect.poll(() => visibleHeight(sheet)).toBeCloseTo(446, 0);
+});
+
+test('på en låg skärm fälls bilden ut först när arket dras upp', async ({ page }) => {
+	await page.setViewportSize({ width: page.viewportSize()!.width, height: 640 });
+	await open(page, '/?plats=s13');
+	const sheet = page.getByRole('dialog', { name: 'Münchner Knödelei' });
+	const photo = sheet.getByRole('img', { name: 'Münchner Knödelei utifrån' });
+	await expect.poll(() => visibleHeight(sheet)).toBeCloseTo(300, 0);
+	await expect(photo).toBeHidden();
+
+	await sheet.getByText('Visa mer', { exact: true }).click();
+	await expect(photo).toBeVisible();
+});
+
+test('en bild som inte laddar döljs och arket får sin vanliga höjd', async ({ page }) => {
+	await tall(page);
+	await page.route(PHOTOS, (r) => r.abort());
+	await open(page, '/?plats=s13');
+	const sheet = page.getByRole('dialog', { name: 'Münchner Knödelei' });
+	await expect(sheet.getByRole('heading', { name: 'Münchner Knödelei' })).toBeVisible();
+	await expect(sheet.getByRole('img', { name: 'Münchner Knödelei utifrån' })).toHaveCount(0);
+	await expect.poll(() => visibleHeight(sheet)).toBeCloseTo(300, 0);
 });
 
 test('detaljarket samlar sociala medier med egna ikoner', async ({ page }) => {

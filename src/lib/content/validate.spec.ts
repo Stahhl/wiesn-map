@@ -37,7 +37,7 @@ describe('validateContent', () => {
 		const place = validateContent(real).content!.editions['2026'].places[0];
 		expect(place.hours).toBeNull();
 		expect(place.links.tiktok).toBeNull();
-		expect(place.image).toBeNull();
+		expect(place.description).toBeNull();
 	});
 
 	it('behåller kontraktets attribut och tar bort ritverktygets i den optimerade kartan', () => {
@@ -61,6 +61,18 @@ describe('validateContent', () => {
 			return places;
 		});
 		expect(messages(files)).toEqual([expect.stringContaining('places.json: 0.seats:')]);
+	});
+
+	it('kräver en fullständig url och fotografen för bilden', () => {
+		const files = withJson(PLACES, (places: { image: unknown }[]) => {
+			places[0].image = { src: '/bilder/marstall.jpg', credit: 'RAW, Moritz Röder' };
+			places[1].image = { src: 'https://example.com/armbrust.jpg' };
+			return places;
+		});
+		expect(messages(files)).toEqual([
+			expect.stringContaining('places.json: 0.image.src:'),
+			expect.stringContaining('places.json: 1.image.credit:')
+		]);
 	});
 
 	it('rapporterar okända fält (stavfel)', () => {

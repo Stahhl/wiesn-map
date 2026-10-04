@@ -16,7 +16,11 @@
 			"instagram": "https://www.instagram.com/marstallfestzelt/",
 			"facebook": "https://www.facebook.com/marstallfestzelt/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2255.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "armbrust",
@@ -35,7 +39,11 @@
 			"floorplan": "https://www.armbrustschuetzenzelt.de/festzelt/zeltplan/",
 			"facebook": "https://www.facebook.com/Armbrustschuetzenzelt/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2243.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "hofbraeu",
@@ -55,6 +63,10 @@
 			"floorplan": "https://www.hb-festzelt.de/en/hofbraeu-festzelt/seating-plan.html",
 			"instagram": "https://www.instagram.com/hofbraeufestzelt/",
 			"facebook": "https://www.facebook.com/HB.Festzelt"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2222.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -70,6 +82,10 @@
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/big-tents/hacker-festzelt",
 			"instagram": "https://www.instagram.com/hackerfestzelt/",
 			"facebook": "https://www.facebook.com/hackerfestzelt"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2201.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -88,7 +104,11 @@
 			"menu": "https://festhalle-schottenhamel.de/en/menu-en/",
 			"floorplan": "https://festhalle-schottenhamel.de/wp-content/uploads/2026/09/Hallenplan_2026.jpg"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2132.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "paulaner",
@@ -107,7 +127,11 @@
 			"instagram": "https://www.instagram.com/paulanerfestzelt/",
 			"facebook": "https://www.facebook.com/paulanerfestzelt"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2147.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "schuetzen",
@@ -126,7 +150,11 @@
 			"instagram": "https://www.instagram.com/schuetzenfestzelt/",
 			"facebook": "https://www.facebook.com/Schuetzenzelt/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a4973.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "kaefer",
@@ -143,7 +171,11 @@
 			"booking": "https://www.feinkost-kaefer.de/pages/schaenke-reservierung",
 			"menu": "https://cdn.shopify.com/s/files/1/0774/6817/2627/files/Speise-und-Getraenkekarte-final-20-08-26.pdf?v=1787218998"
 		},
-		"allergenInfo": "qr"
+		"allergenInfo": "qr",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2366.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "kufflers",
@@ -162,6 +194,10 @@
 			"allergens": "https://www.weinzelt.com/de/allergene-und-zusatz.php",
 			"instagram": "https://www.instagram.com/kufflers_weinzelt/",
 			"facebook": "https://www.facebook.com/KufflersWeinzelt"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2351.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -179,7 +215,11 @@
 			"booking": "https://www.loewenbraeuzelt.de/reservierungen/",
 			"menu": "https://www.loewenbraeuzelt.de/speisekarte/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2165.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "pschorr",
@@ -198,7 +238,11 @@
 			"floorplan": "https://www.braeurosl.de/wiesn-zelt/infos-zeltplan",
 			"instagram": "https://www.instagram.com/braeurosl_festzelt/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2128.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "augustiner",
@@ -215,7 +259,11 @@
 			"booking": "https://www.festhalle-augustiner.com/reservierung/",
 			"menu": "https://www.festhalle-augustiner.com/speisekarte/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2188.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "ochsenbraterei",
@@ -235,6 +283,10 @@
 			"instagram": "https://www.instagram.com/ochsenbraterei/",
 			"facebook": "https://www.facebook.com/ochsenbraterei",
 			"tiktok": "https://www.tiktok.com/@ochsenbraterei"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2227.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -255,6 +307,10 @@
 			"floorplan": "https://www.fischer-vroni.de/en/oktoberfest/sitzplan/",
 			"instagram": "https://www.instagram.com/fischer_vroni_festzelt/",
 			"facebook": "https://www.facebook.com/fischervroni/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2248.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -270,6 +326,10 @@
 			"oktoberfest": "https://www.oktoberfest.de/en/the-oide-wiesn",
 			"website": "https://museumszelt-oide-wiesn.de/museumszelt-oide-wiesn/",
 			"menu": "https://museumszelt-oide-wiesn.de/wp-content/uploads/2026/09/SPEISEKARTE_OIDE_WIESN_2026_Entwurf4_10-09_2026.pdf"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a4997.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -289,7 +349,11 @@
 			"instagram": "https://www.instagram.com/festzelttradition/",
 			"facebook": "https://www.facebook.com/FestzeltTradition/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a4975.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "schuetzenlisl",
@@ -308,7 +372,11 @@
 			"instagram": "https://www.instagram.com/schuetzenlisl_volkssaengerzelt/",
 			"facebook": "https://www.facebook.com/profile.php?id=61560747823001"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2026-09/mr_b3a2193.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "boandlkramerei",
@@ -327,7 +395,11 @@
 			"instagram": "https://www.instagram.com/boandlkramerei_oide_wiesn/",
 			"facebook": "https://www.facebook.com/Boandlkramerei.Oktoberfest/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a4991.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s1",
@@ -345,6 +417,10 @@
 			"menu": "https://wiesnzelt.de/speisen-und-getraenke/speisekarte/",
 			"instagram": "https://www.instagram.com/feisingers_kas_und_weinstubn/",
 			"facebook": "https://www.facebook.com/Kas.und.Weinstubn"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2023-08/feisinger_kas_weinstubn_sebastian_lehner-07452.jpg?h=56d0ca2e",
+			"credit": "Sebastian Lehner"
 		}
 	},
 	{
@@ -362,6 +438,10 @@
 			"booking": "https://www.gloeckle-wirt.de/platzreservierung-oktoberfest-gloeckle-wirt",
 			"menu": "https://www.gloeckle-wirt.de/essen-trinken-gloeckle-wirt-oktoberfest",
 			"facebook": "https://www.facebook.com/gloecklewirt"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2144.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -378,6 +458,10 @@
 			"website": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/",
 			"booking": "https://www.heinz-huehnerbraterei.de/en/oktoberfest/reservation/",
 			"menu": "https://www.heinz-huehnerbraterei.de/oktoberfest/speisekarte/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2135.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -398,7 +482,11 @@
 			"facebook": "https://www.facebook.com/Poschners/",
 			"tiktok": "https://www.tiktok.com/@poschners.oktoberfest"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2174.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s5",
@@ -418,7 +506,11 @@
 			"facebook": "https://www.facebook.com/pages/Ables-Goldener-Hahn/823723004341402",
 			"youtube": "https://www.youtube.com/channel/UCGSXbnguiN5DmOC5q-bIW-w"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2210.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s6",
@@ -436,7 +528,11 @@
 			"menu": "https://haxnbraterei.de/wp-content/uploads/2026/08/Haxnbraterei-Hochreiter_Speisekarte2026.pdf",
 			"instagram": "https://www.instagram.com/haxnbraterei/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2207.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s7",
@@ -450,6 +546,10 @@
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/schiebls-kaffeehaferl",
 			"website": "https://schiebls-cafebetriebe.de/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2023-08/kaffeehaferl_schiebl_sebastian_lehner-07845.jpg?h=56d0ca2e",
+			"credit": "Sebastian Lehner"
 		}
 	},
 	{
@@ -464,6 +564,10 @@
 		"links": {
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/metzgerstubn",
 			"website": "https://vinzenzmurr.de/metzger-stubn/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2228.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -482,7 +586,11 @@
 			"menu": "https://www.floesserstadl.de/speisen-getraenke",
 			"instagram": "https://www.instagram.com/floesserstadl_festzelt/"
 		},
-		"allergenInfo": "qr"
+		"allergenInfo": "qr",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2026-09/mr_b3a2457.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s10",
@@ -499,6 +607,10 @@
 			"booking": "https://kalbsbraterei.de/reservierung/",
 			"instagram": "https://www.instagram.com/kalbsbraterei/",
 			"facebook": "https://www.facebook.com/kalbsbraterei/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2171.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -519,7 +631,11 @@
 			"facebook": "https://www.facebook.com/ammerwiesn/",
 			"youtube": "https://www.youtube.com/channel/UCBR1FRC2VXrYys1aUKsnWyQ"
 		},
-		"allergenInfo": "staff"
+		"allergenInfo": "staff",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2216.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s12",
@@ -537,7 +653,11 @@
 			"menu": "https://www.bodos.de/wp-content/uploads/Speisekarte_Bodos_2026.pdf",
 			"instagram": "https://www.instagram.com/bodoscafezelt/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2026-09/mr_b3a2243.jpg?h=da22ec17",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s13",
@@ -555,7 +675,11 @@
 			"menu": "https://muenchner-knoedelei.de/wp-content/uploads/2026/09/menu-knoedelei-oktoberfest-2026-en.pdf",
 			"instagram": "https://www.instagram.com/muenchner_knoedelei/"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a5010.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s14",
@@ -570,6 +694,10 @@
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-kaiserschmarrn",
 			"website": "https://www.rischart.de/oktoberfest/rischart-s-cafe-kaiserschmarrn/",
 			"booking": "https://kaiserschmarrn.rischart.de/reservierung"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2357.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -585,6 +713,10 @@
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/cafe-theres",
 			"website": "https://cafe-theres.de/en/",
 			"booking": "https://cafe-theres.de/en/reservieren/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2340.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -604,6 +736,10 @@
 			"allergens": "https://www.heimer-entenbraterei.de/en/speisekarte#menu-en-hinweise",
 			"instagram": "https://www.instagram.com/heimer.oktoberfest/",
 			"facebook": "https://www.facebook.com/heimer.entenbraterei"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2330.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -623,7 +759,11 @@
 			"instagram": "https://www.instagram.com/wildstuben/",
 			"facebook": "https://www.facebook.com/Wildstuben-101361934570835"
 		},
-		"allergenInfo": "menu"
+		"allergenInfo": "menu",
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-10/mr_b3a0240.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		}
 	},
 	{
 		"id": "s18",
@@ -641,6 +781,10 @@
 			"menu": "https://zur-bratwurst.de/speisen_getraenke",
 			"instagram": "https://www.instagram.com/hochreiterszurbratwurst/",
 			"facebook": "https://www.facebook.com/zurbratwurst/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-10/mr_b3a0244.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -659,6 +803,10 @@
 			"menu": "https://fisch-baeda.de/speisekarte/",
 			"instagram": "https://www.instagram.com/fischbaedawiesnstadl/",
 			"facebook": "https://www.facebook.com/fischbaeda/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-10/mr_b3a0233.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -674,6 +822,10 @@
 			"oktoberfest": "https://www.oktoberfest.de/en/beer-tents/small-tents/wirtshaus-im-schichtl",
 			"website": "https://www.schichtl.de/wirtshaus/",
 			"booking": "https://www.schichtl.de/wirtshaus/#reservierung"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2317.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	},
 	{
@@ -692,6 +844,10 @@
 			"menu": "https://www.wiesn-guglhupf.de/speisekarte",
 			"instagram": "https://www.instagram.com/wiesn_guglhupf/",
 			"facebook": "https://www.facebook.com/wiesnguglhupf/"
+		},
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2307.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
 		}
 	}
 ]

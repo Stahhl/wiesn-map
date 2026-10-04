@@ -116,7 +116,6 @@ content/
       edition.json              metadata + konfiguration för UI och karta
       places.json               tält och ställen
       map.svg                   annoterad karta (kontrakt i §5)
-      images/                   tältfoton (senare)
 ```
 
 Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra årets mapp, byter `map.svg` och justerar datan.
@@ -242,7 +241,10 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 			"youtube": null
 		},
 		"allergenInfo": null,
-		"image": null,
+		"image": {
+			"src": "https://www.oktoberfest.de/sites/default/files/styles/3_2_w813/public/2025-09/mr_b3a2222.jpg?h=9855f42d",
+			"credit": "RAW, Moritz Röder"
+		},
 		"description": null
 	}
 ]
@@ -253,6 +255,7 @@ Varje år är en egen mapp. När ni startar ett nytt år kopierar ni förra åre
 - `number` används för små tält ("Litet tält · nr 7").
 - `links`: `oktoberfest` är tältets sida på oktoberfest.de (helst den engelska). `allergens` är ett eget dokument eller avsnitt om allergener. `floorplan` är en planritning av tältet, inte en karta över var det ligger. Sociala medier tas bara med om kontot är tältets eget, inte företagets eller operatörens. De visas samlade i en egen rad med varumärkenas ikoner, inte bland de andra länkarna. Underlaget för 2026, med källor och det som behöver göras för hand, finns i `docs/research/lankar-2026.md`.
 - `allergenInfo` (`menu` | `qr` | `staff`) talar om var allergeninformationen finns när den inte har en egen länk. Den visas som en faktarad, t.ex. "Allergener: Märkta i menyn". `menu` kräver `links.menu`, och det kontrolleras av `content:check`.
+- `image` är en visningsbild utifrån, helst fasaden, med fotografen i `credit`. Den visas överst i detaljarket med texten "Foto: {credit} / {domän}". I v1 länkas bilden direkt från oktoberfest.de och laddas inte ner. Laddar den inte, t.ex. offline eller för att länken har gått sönder, döljs den. På låga skärmar, t.ex. i Safari med verktygsfälten framme, fälls bilden ut först när arket dras upp, så att kartan ovanför arket inte blir för liten. Underlaget för 2026, med regeln för valet och en bild per tält, finns i `docs/research/bilder-2026.md`.
 - Fält som saknas eller är `null` döljs i UI:t. Prototypens platshållare (öppettider, länkar, foto) visas alltså inte förrän det finns riktig data.
 - Startdata: prototypens 39 tält (18 stora och 21 små) flyttas från `TENTS` i `Wiesn Karta.dc.html`.
 
@@ -483,7 +486,7 @@ GitHub Actions (`.github/workflows/ci.yml`) kör på varje PR och push till `mai
 wiesn-map/
 ├─ content/                          innehåll (§4)
 │  ├─ site.json
-│  └─ editions/2026/{edition.json, places.json, map.svg, images/}
+│  └─ editions/2026/{edition.json, places.json, map.svg}
 ├─ docs/
 │  ├─ teknisk-profil.md              detta dokument
 │  └─ wiesn_2026_north_up.svg        originalkarta (källa)
@@ -541,7 +544,7 @@ Mindre idéer om funktioner samlas i [framtida-funktioner.md](framtida-funktione
 | Native-appar  | Läser `/api/v1`. SVG:n renderas med `react-native-svg` eller i en WebView. Valibot-schemat bryts ut till ett delat paket (pnpm workspace)                                                                 |
 | Flera språk   | Paraglide JS för UI-strängar. Etikettfält i datan blir `{ "sv": …, "de": …, "en": … }`                                                                                                                    |
 | Äldre år      | Route `/[edition]`                                                                                                                                                                                        |
-| Bilder        | Tältfoton via Vercel Image Optimization                                                                                                                                                                   |
+| Bilder        | Egna kopior av tältbilderna (med tillstånd eller fri licens) via Vercel Image Optimization, och cache i service workern så att de syns offline. I v1 länkas de från oktoberfest.de                        |
 | Analys        | Integritetsvänlig mätning (t.ex. Vercel Web Analytics), utan cookies                                                                                                                                      |
 
 ---

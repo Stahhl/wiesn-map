@@ -134,7 +134,14 @@ export const PlaceSchema = v.strictObject({
 	 * via QR-kod i tältet eller hos personalen.
 	 */
 	allergenInfo: nullish(v.picklist(['menu', 'qr', 'staff'])),
-	image: nullish(Text),
+	/** Visningsbild utifrån, helst fasaden. Länkas från källan och kan försvinna. */
+	image: nullish(
+		v.strictObject({
+			src: Url,
+			/** Fotografen, som källan anger den */
+			credit: Text
+		})
+	),
 	description: nullish(Text)
 });
 

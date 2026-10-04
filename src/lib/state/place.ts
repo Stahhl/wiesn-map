@@ -91,3 +91,13 @@ export function placeSocial(place: Place): SocialLink[] {
 		return href ? [{ kind, href, label: sv.social[kind] }] : [];
 	});
 }
+
+export type PlacePhoto = { src: string; alt: string; credit: string };
+
+/** Visningsbilden med alt-text och fotograf, där källans domän står efter fotografen */
+export function placePhoto(place: Place): PlacePhoto | null {
+	if (!place.image) return null;
+	const { src, credit } = place.image;
+	const host = new URL(src).hostname.replace(/^www\./, '');
+	return { src, alt: sv.photoAlt(place.name), credit: sv.photoCredit(credit, host) };
+}

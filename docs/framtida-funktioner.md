@@ -5,6 +5,7 @@ Idéer som ännu inte är beslutade eller planerade. Varje punkt beskriver bakgr
 | #   | Idé                                                                      | Område             | Storlek                                  | Status                |
 | --- | ------------------------------------------------------------------------ | ------------------ | ---------------------------------------- | --------------------- |
 | 1   | [`pnpm content:links`: kontroll av externa länkar](#1-pnpm-contentlinks) | Innehåll, kvalitet | Liten (ca 100 rader, inga nya beroenden) | Föreslagen 2026-10-03 |
+| 2   | [Tältbilder hos oss och offline](#2-tältbilder-hos-oss-och-offline)      | Innehåll, offline  | Liten till mellan                        | Föreslagen 2026-10-04 |
 
 ---
 
@@ -54,3 +55,33 @@ Utdata blir en avvikelserapport i samma stil som `content:check`:
 - Schemalagt jobb eller bara manuellt? I så fall, hur ofta?
 - Ska resultatet bli ett issue på GitHub eller räcker det med en logg i Actions?
 - Ska "misstänkt" (gammalt årtal i adressen) räknas som fel inför en ny upplaga?
+
+---
+
+## 2. Tältbilder hos oss och offline
+
+Tältbilderna läggs hos oss i stället för att länkas från oktoberfest.de.
+
+### Bakgrund
+
+Sedan 2026-10-04 har varje tält en visningsbild i detaljarket ([research/bilder-2026.md](research/bilder-2026.md)). Bilderna länkas direkt från oktoberfest.de, och det har tre nackdelar:
+
+- **Offline:** service workern hanterar bara egna adresser, så bilderna syns inte inne i tälten när nätet är borta. Då döljs de.
+- **Länkar som går sönder:** oktoberfest.de kan byta adress eller bild när som helst, t.ex. inför nästa år.
+- **Upphovsrätt:** vi länkar utan licens. Fotografen och källan visas, men bilderna är inte våra.
+
+### Förslag
+
+1. **Rättigheter först:** be München Tourismus eller fotograferna om tillstånd, eller byt till bilder med fri licens, t.ex. från Wikimedia Commons eller egna foton från Wiesn.
+2. **Lagring:** bilderna läggs i `content/editions/<år>/images/<id>.jpg`, och `image.src` blir en relativ sökväg. `content:check` kontrollerar att filen finns.
+3. **Storlekar:** Vercel Image Optimization (`/_vercel/image?url=…&w=…`) ger `srcset` i några bredder.
+4. **Offline:** service workern cachar bilderna i en egen cache när de har visats en gång (stale-while-revalidate). Cachen överlever nya deployer. Att förcacha alla bilder vid installation tar för mycket på ett överbelastat nät.
+
+### Avgränsningar
+
+- Gäller visningsbilden i detaljarket. Flera bilder per tält (karusell) och bilder i resultatbandet är separata idéer.
+
+### Öppna frågor
+
+- Går det att få tillstånd för bilderna från oktoberfest.de, eller är egna eller fritt licensierade bilder enklare?
+- Ska bilderna cachas bara när de har visats, eller ska de förcachas när användaren är på wifi?

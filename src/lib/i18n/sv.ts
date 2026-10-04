@@ -33,6 +33,8 @@ export const sv = {
 
 	// Detaljark
 	close: 'Stäng',
+	photoAlt: (name: string) => `${name} utifrån`,
+	photoCredit: (credit: string, source: string) => `Foto: ${credit} / ${source}`,
 	showMore: 'Visa mer',
 	showLess: 'Visa mindre',
 	number: 'nr',

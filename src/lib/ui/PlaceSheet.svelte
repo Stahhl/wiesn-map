@@ -1,14 +1,24 @@
 <!--
-	Detaljark för ett ställe (§6.4): typ, namn, taggar och snabblänkar i peek-läget,
-	fakta, alla länkar och sociala medier när arket dras upp. Det som saknas i datan
-	visas inte.
+	Detaljark för ett ställe (§6.4): bild, typ, namn, taggar och snabblänkar i
+	peek-läget, fakta, alla länkar och sociala medier när arket dras upp. Det som
+	saknas i datan visas inte.
 -->
 <script lang="ts" module>
 	/** Synlig höjd i peek-läget */
 	export const PEEK = 300;
+	/** Bilden överst i arket, och mellanrummet under den */
+	const PHOTO_HEIGHT = 136;
+	const PHOTO_GAP = 10;
+	/**
+	 * Så mycket av appen som ska synas ovanför arket i peek-läget: rubrikkortet och en
+	 * bit karta runt stället. Får bilden inte plats med det fälls den ut först när arket
+	 * dras upp, t.ex. i Safari med verktygsfälten framme.
+	 */
+	const ROOM_ABOVE = 320;
 </script>
 
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import type { Edition, Place } from '#lib/content/schema.ts';
 	import { sv } from '#lib/i18n/sv.ts';
 	import {
@@ -16,6 +26,7 @@
 		kindLabel,
 		placeFacts,
 		placeLinks,
+		placePhoto,
 		placeSocial,
 		placeTags
 	} from '#lib/state/place.ts';
@@ -43,6 +54,7 @@
 	const facts = $derived(shown ? placeFacts(shown, edition) : []);
 	const links = $derived(shown ? placeLinks(shown) : []);
 	const social = $derived(shown ? placeSocial(shown) : []);
+	const photo = $derived(shown && placePhoto(shown));
 	/** Snabbknapparna i peek-läget */
 	const quick = $derived(links.filter((l) => ['menu', 'website', 'booking'].includes(l.kind)));
 
@@ -53,9 +65,23 @@
 	const hasMore = $derived(links.length > 0 || social.length > 0 || !!shown?.description);
 	const snap: Snap = $derived(place ? (hasMore && !expanded ? 'peek' : 'expanded') : 'closed');
 
-	let height = $state(0);
+	/**
+	 * Bilden länkas från källan. Laddar den inte (offline eller trasig länk) döljs den,
+	 * och arket får sin vanliga höjd. Nästa gång stället öppnas görs ett nytt försök.
+	 */
+	let failed = $state<string | null>(null);
 	$effect(() => {
-		inset = hasMore ? PEEK : height;
+		if (place) untrack(() => (failed = null));
+	});
+	const showPhoto = $derived(!!photo && photo.src !== failed);
+
+	let height = $state(0);
+	const photoInPeek = $derived(showPhoto && height - PEEK - PHOTO_HEIGHT - PHOTO_GAP >= ROOM_ABOVE);
+	const peek = $derived(photoInPeek ? PEEK + PHOTO_HEIGHT + PHOTO_GAP : PEEK);
+	const photoOpen = $derived(photoInPeek || snap === 'expanded');
+
+	$effect(() => {
+		inset = hasMore ? peek : height;
 	});
 
 	function onsnap(s: Snap) {
@@ -67,13 +93,34 @@
 <BottomSheet
 	{snap}
 	{onsnap}
-	peek={hasMore ? PEEK : undefined}
+	peek={hasMore ? peek : undefined}
 	fill={hasMore}
 	z={5}
 	label={shown?.name ?? ''}
 	bind:height
 >
 	{#snippet header()}
+		{#if photo && showPhoto}
+			<!-- Ny bild får ett nytt element, så att förra ställets bild aldrig syns -->
+			{#key photo.src}
+				<figure
+					class="photo"
+					style:height="{photoOpen ? PHOTO_HEIGHT : 0}px"
+					style:margin-bottom="{photoOpen ? PHOTO_GAP : 0}px"
+				>
+					<img
+						src={photo.src}
+						alt={photo.alt}
+						referrerpolicy="no-referrer"
+						decoding="async"
+						draggable="false"
+						onerror={() => (failed = photo.src)}
+					/>
+					<figcaption>{photo.credit}</figcaption>
+				</figure>
+			{/key}
+		{/if}
+
 		{#if shown && category}
 			<div class="head">
 				<div class="titles">
@@ -179,6 +226,43 @@
 </BottomSheet>
 
 <style>
+	.photo {
+		position: relative;
+		margin: 0 12px;
+		border-radius: 16px;
+		overflow: hidden;
+		background: var(--sand);
+		transition:
+			height 0.4s var(--ease),
+			margin 0.4s var(--ease);
+	}
+
+	/* Fasaden sitter oftast strax ovanför mitten, folkmassan längst ned */
+	.photo img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 40%;
+		-webkit-user-drag: none;
+		user-select: none;
+	}
+
+	.photo figcaption {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 18px 10px 6px;
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
+		color: rgba(255, 255, 255, 0.92);
+		font-size: 10.5px;
+		text-align: right;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 	.head {
 		padding: 2px 18px 0;
 		display: flex;

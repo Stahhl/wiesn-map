@@ -6,6 +6,7 @@ import {
 	kindLabel,
 	placeFacts,
 	placeLinks,
+	placePhoto,
 	placeSocial,
 	placeTags,
 	shortKindLabel
@@ -148,6 +149,15 @@ describe('place', () => {
 			'oktoberfest'
 		]);
 		expect(placeSocial(byId('s3'))).toEqual([]);
+	});
+
+	it('ger bilden alt-text och fotograf med källa', () => {
+		expect(placePhoto(byId('s13'))).toEqual({
+			src: expect.stringMatching(/^https:\/\/www\.oktoberfest\.de\/.+\.jpg/),
+			alt: 'Münchner Knödelei utifrån',
+			credit: 'Foto: RAW, Moritz Röder / oktoberfest.de'
+		});
+		expect(placePhoto({ ...byId('s13'), image: null })).toBeNull();
 	});
 
 	it('visar var allergenerna finns när de saknar egen länk', () => {
